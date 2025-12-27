@@ -1,0 +1,1862 @@
+﻿<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Doodh Dairy - ????? ???? ?????</title>
+    <style>
+        /* TIRANGA COLORS */
+        :root {
+            --saffron: #FF6A00; /* brighter saffron */
+            --white: #FFFFFF;
+            --green: #1B8A4A; /* fresh green */
+            --blue: #0B3B5C; /* deep blue for accents */
+            --muted: #f3f6f4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        body {
+            background: #fffef6; /* light cream milk-colored background */
+            color: #333;
+        }
+
+        /* HEADER */
+        .header {
+            background: linear-gradient(135deg, var(--saffron), #ffb74d);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .shop-title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+        .logo-placeholder {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            color: var(--green);
+            border: 3px solid white;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .header h1 {
+            font-size: 2.6rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
+            color: var(--blue); /* darker for highlight */
+            font-weight: 900;
+            max-width: 720px;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+
+        .contact-bar {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px;
+            border-radius: 10px;
+            display: inline-block;
+            color: #222;
+            font-weight: 600;
+        }
+
+        /* MAIN CONTENT */
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        /* PRODUCTS SECTION */
+        .products-section {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            color: var(--green);
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+            font-size: 1.8rem;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 18px;
+        }
+
+        /* PRODUCT CARD */
+        .product-card {
+            background: linear-gradient(180deg, #fff 0%, #fcfcfd 100%);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(11, 59, 92, 0.06);
+            transition: transform 0.22s ease, box-shadow 0.22s ease;
+            border: 1px solid #eee;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            border-color: var(--saffron);
+        }
+
+        .product-image {
+            height: 160px;
+            background: linear-gradient(90deg, var(--saffron) 0%, var(--saffron) 30%, var(--white) 30%, var(--white) 70%, var(--green) 70%, var(--green) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+            display: block;
+            width: 100%;
+            height: 100%;
+            filter: saturate(1.05) contrast(1.02);
+        }
+
+        .product-info {
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            flex: 1 1 auto;
+        }
+
+        .product-name {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--blue);
+            margin-bottom: 6px;
+            text-align: left;
+        }
+
+        .product-price {
+            font-size: 1.25rem;
+            color: var(--green);
+            font-weight: 800;
+            text-align: left;
+            margin: 4px 0;
+        }
+
+        .product-unit {
+            color: #666;
+            text-align: left;
+            margin-bottom: 6px;
+            font-size: 0.85rem;
+        }
+
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .qty-btn {
+            width: 34px;
+            height: 34px;
+            background: var(--green);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .qty-btn:hover {
+            background: #0a5c08;
+        }
+
+        .qty-input {
+            width: 80px;
+            height: 34px;
+            text-align: center;
+            margin: 0 10px;
+            border: 1px solid #e6e6e6;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .add-to-cart {
+            width: 100%;
+            padding: 10px 12px;
+            background: linear-gradient(135deg, var(--saffron), #ff8c1a);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.98rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform 0.15s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .add-to-cart:hover { transform: translateY(-2px); }
+
+        /* CART SECTION */
+        .cart-section {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            margin-bottom: 30px;
+        }
+
+        .cart-items {
+            min-height: 80px;
+            margin: 20px 0;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background: #f9f9f9;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            border-left: 5px solid var(--green);
+        }
+
+        .cart-total {
+            text-align: right;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--green);
+            padding-top: 20px;
+            border-top: 2px solid #eee;
+            margin-top: 20px;
+        }
+
+        /* ORDER FORM */
+        .order-form {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            margin-bottom: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-input:focus {
+            border-color: var(--green);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(19, 136, 8, 0.1);
+        }
+
+        .submit-order {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, var(--green), #0a5c08);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .submit-order:hover {
+            background: linear-gradient(135deg, #0a5c08, var(--green));
+            transform: scale(1.02);
+        }
+
+        /* ADMIN BUTTON */
+        .admin-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--blue);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 700;
+            box-shadow: 0 4px 12px rgba(0, 0, 128, 0.3);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* MODALS */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            max-width: 900px;
+            width: 95%;
+            max-height: 90vh;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            animation: slideUp 0.4s;
+        }
+
+        /* Make admin modal scrollable when content is long */
+        .modal-content { max-height: 80vh; overflow: auto; }
+
+        /* When admin modal becomes draggable we set absolute positioning via JS */
+        .modal-content.draggable {
+            position: absolute;
+            touch-action: none;
+            cursor: move;
+        }
+        .tab-content { max-height: 60vh; overflow-y: auto; }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, var(--saffron), var(--green));
+            color: white;
+            padding: 25px;
+            text-align: center;
+            position: relative;
+        }
+
+        /* Responsive tweaks */
+        @media (max-width: 420px) {
+            .product-image { height: 110px; }
+            .header h1 { font-size: 1.6rem; }
+            .logo-img { width: 64px; height: 64px; }
+            .admin-button { padding: 8px 12px; top: 12px; right: 12px; }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            background: white;
+            color: var(--blue);
+            border: none;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .modal-body {
+            padding: 30px;
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+
+        /* ADMIN PANEL */
+        .admin-tabs {
+            display: flex;
+            background: #f5f5f5;
+            border-bottom: 2px solid var(--green);
+        }
+
+        .admin-tab {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-weight: 700;
+            color: #666;
+            transition: all 0.3s;
+        }
+
+        .admin-tab.active {
+            background: white;
+            color: var(--green);
+            border-bottom: 4px solid var(--green);
+        }
+
+        .tab-content {
+            padding: 25px;
+        }
+
+        .admin-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .admin-table th {
+            background: var(--green);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 700;
+        }
+
+        .admin-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .status-select {
+            padding: 8px 15px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            min-width: 150px;
+        }
+
+        .update-btn {
+            background: var(--blue);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        /* FOOTER */
+        .footer {
+            background: linear-gradient(135deg, var(--saffron), var(--green));
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+            font-weight: 600;
+        }
+
+        /* NOTIFICATION */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 25px;
+            border-radius: 8px;
+            color: white;
+            font-weight: 700;
+            z-index: 3000;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            animation: slideInRight 0.3s;
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+            }
+
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        .notification.success {
+            background: var(--green);
+        }
+
+        .notification.error {
+            background: #dc3545;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="shop-title">
+            <div style="position:relative; display:flex; align-items:center; justify-content:center;">
+                <img src="/images/Logo.jpg" class="logo-img" id="siteLogo" onerror="this.style.display='none'; document.getElementById('logoFallback').style.display='flex'">
+                <div id="logoFallback" class="logo-placeholder" style="display:none">??</div>
+            </div>
+            <h1>Indian Doodh Dairy</h1>
+        </div>
+        <p class="tagline">????? ???? ????? - ???????? ?? ??????? ?? ??????</p>
+        <div class="contact-bar">
+            ?? ????? ?????, ????? ???, ???? | ?? 7007120750, 9807235659 | ? 6AM-10PM
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <div class="container">
+        <!-- PRODUCTS SECTION -->
+        <section class="products-section">
+            <h2 class="section-title">?? ????? ????? ???? ??????</h2>
+            <div class="products-grid" id="productsContainer">
+                <!-- Products will load here -->
+            </div>
+        </section>
+
+        <!-- CART SECTION -->
+        <section class="cart-section">
+            <h2 class="section-title">?? ???? ????? ??????</h2>
+            <div class="cart-items" id="cartItems">
+                <p style="text-align: center; color: #888; padding: 40px 0;">???? ????? ??? ???? ??</p>
+            </div>
+            <div class="cart-total">
+                ??? ????: ?<span id="totalAmount">0</span>
+            </div>
+        </section>
+
+        <!-- ORDER FORM -->
+        <section class="order-form">
+            <h2 class="section-title">?? ????? ??????? ????</h2>
+            <div class="form-group">
+                <input type="text" class="form-input" id="customerName" placeholder="???? ???? ???" required>
+            </div>
+            <div class="form-group">
+                <input type="tel" class="form-input" id="customerPhone" placeholder="???? ?????? ????" required>
+            </div>
+            <div class="form-group">
+                <textarea class="form-input" id="customerAddress"
+                    placeholder="??????? ??? (???? ????, ??????, ?????, ?????????)" rows="4" required></textarea>
+            </div>
+            <button class="submit-order" onclick="placeOrder()">
+                <span>?</span> ????? ??????? ????
+            </button>
+        </section>
+    </div>
+
+    <!-- ADMIN BUTTON -->
+    <button class="admin-button" onclick="openAdminLogin()">
+        <span>??</span> Admin Panel
+    </button>
+
+    <!-- ADMIN LOGIN MODAL -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content" style="max-width: 500px;">
+            <div class="modal-header">
+                <h2>Admin Login</h2>
+                <button class="close-modal" onclick="closeLogin()">�</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <input type="password" id="adminPassword" class="form-input" placeholder="Enter Admin Password"
+                        autocomplete="off">
+                </div>
+                <button class="submit-order" onclick="loginAdmin()">
+                    Login
+                </button>
+                <!-- Password not shown here; use /admin.html to login -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ORDER DETAILS MODAL -->
+    <div class="modal" id="orderDetailsModal">
+        <div class="modal-content" style="max-width:600px">
+            <div class="modal-header">
+                <h2 id="orderDetailsTitle">Order Details</h2>
+                <button class="close-modal" onclick="closeOrderDetails()">�</button>
+            </div>
+            <div class="modal-body" id="orderDetailsBody">
+                <!-- items list populated here -->
+            </div>
+            <div style="padding:16px;display:flex;gap:8px;justify-content:flex-end;background:#fafafa;border-top:1px solid #eee">
+                <button class="update-btn" onclick="sendWhatsAppForCurrentOrder()">Send WhatsApp</button>
+                <button onclick="closeOrderDetails()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ADMIN PANEL MODAL -->
+    <div class="modal" id="adminModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>??????? ???? - Indian Doodh Dairy</h2>
+                <button class="close-modal" onclick="logoutAdmin()" title="Logout">?</button>
+                <button class="close-modal" onclick="closeAdmin()">�</button>
+            </div>
+
+            <div class="admin-tabs">
+                <button class="admin-tab active" onclick="showTab('orders', event)">?? ?????</button>
+                <button class="admin-tab" onclick="showTab('products', event)">?? ??????</button>
+                <button class="admin-tab" onclick="showTab('settings', event)">?? ????????</button>
+            </div>
+
+            <!-- ORDERS TAB -->
+            <div id="ordersTab" class="tab-content">
+                <h3 style="color: var(--green); margin-bottom: 20px;">?? ??? ?????</h3>
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                                    <th>????? ID</th>
+                                    <th>??????</th>
+                                    <th>???</th>
+                                    <th>????? ?? ??????</th>
+                                    <th>????</th>
+                                    <th>??????</th>
+                                    <th>????</th>
+                                                    <th>????????</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ordersTableBody">
+                        <!-- Orders will load here -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- PRODUCTS TAB -->
+            <div id="productsTab" class="tab-content" style="display: none;">
+                <h3 style="color: var(--green); margin-bottom: 20px;">?? ?????? ???????</h3>
+                <div style="margin-bottom:12px;display:flex;gap:12px;align-items:center;">
+                    <button class="update-btn" onclick="openCreateProductModal()">? ??? ?????? ??????</button>
+                    <div style="margin-left: auto; color:#666; font-size:0.9rem">Tip: ?? ???? ?????? ?????? ??????? ??? ?? ???? ???? ????</div>
+                </div>
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>??????</th>
+                            <th>???? (?)</th>
+                            <th>?????</th>
+                            <th>??????</th>
+                            <th>????????</th>
+                        </tr>
+                    </thead>
+                    <tbody id="productsTableBody">
+                        <!-- Products will load here -->
+                    </tbody>
+                </table>
+                <!-- Create product inline modal -->
+                <div id="createProductModal" style="display:none;margin-top:12px;padding:12px;border:1px dashed #ddd;border-radius:8px;background:#fff;">
+                    <h4>?? ?????? ?? ?????</h4>
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;">
+                        <input id="new_p_id" placeholder="id (eg. p-011)">
+                        <input id="new_p_name" placeholder="???">
+                        <input id="new_p_category" placeholder="category">
+                        <input id="new_p_price" placeholder="price">
+                        <input id="new_p_unit" placeholder="unit">
+                        <input id="new_p_image" placeholder="imageUrl (eg. /images/Dahi.jpg)">
+                        <textarea id="new_p_desc" placeholder="description" style="grid-column:1/3"></textarea>
+                    </div>
+                    <div style="margin-top:10px;display:flex;gap:8px;">
+                        <button class="update-btn" onclick="createProductFromAdminModal()">Create</button>
+                        <button onclick="closeCreateProductModal()">Cancel</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SETTINGS TAB -->
+            <div id="settingsTab" class="tab-content" style="display: none;">
+                <h3 style="color: var(--green); margin-bottom: 20px;">?? ????????</h3>
+                <div style="padding: 20px; background: #f9f9f9; border-radius: 10px;">
+                    <h4 style="margin-bottom: 15px;">?? ??????? ?????</h4>
+                    <div class="form-group">
+                        <input type="password" id="currentPassword" class="form-input" placeholder="??????? ???????">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="newPassword" class="form-input" placeholder="??? ???????">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="confirmPassword" class="form-input" placeholder="??? ??????? ??? ??">
+                    </div>
+                    <button class="update-btn" onclick="changePassword()"
+                        style="width: 100%; padding: 15px; font-size: 1.1rem;">
+                        ??????? ?????
+                    </button>
+                </div>
+                <div style="margin-top:18px;padding:20px;background:#fff;border-radius:8px;border:1px solid #eee">
+                    <h4 style="margin-bottom:10px">?? Admin Contact</h4>
+                    <div class="form-group">
+                        <input type="tel" id="adminContact" class="form-input" placeholder="Admin WhatsApp numbers (comma separated, e.g. 7007120750,9807235659)">
+                    </div>
+                    <div style="display:flex;gap:8px;">
+                        <button class="update-btn" onclick="saveAdminContact()">Save Contact</button>
+                        <button onclick="populateAdminContact()" style="margin-left:8px">Load</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>� 2023 Indian Doodh Dairy. ??? ?????? ?????????</p>
+        <p>??????? ????? ?????, ?????? ???????? ????? ?????</p>
+        <p style="margin-top: 10px; font-size: 0.9rem; opacity: 0.8;">
+            ?? ???????? ??? ??????? (5 ???? ?? ????) | ?? Cash on Delivery Available
+        </p>
+    </footer>
+
+    <script>
+        // ==================== COMPLETE DAIRY PRODUCTS ====================
+        const dairyProducts = [
+            { id: 1, name: "??? (Dahi)", price: 60, unit: "????", emoji: "??", category: "dairy" },
+            { id: 2, name: "???? (Paneer)", price: 300, unit: "????", emoji: "??", category: "dairy" },
+            { id: 3, name: "???? ?? (Desi Ghee)", price: 600, unit: "500 ?????", emoji: "??", category: "dairy" },
+            { id: 4, name: "???? (Malai)", price: 120, unit: "????", emoji: "??", category: "dairy" },
+            { id: 5, name: "???? (Khoya/Mawa)", price: 450, unit: "????", emoji: "?", category: "dairy" },
+            { id: 6, name: "???? (Chena)", price: 200, unit: "????", emoji: "??", category: "dairy" },
+            { id: 7, name: "??????? (Shrikhand)", price: 280, unit: "????", emoji: "??", category: "sweet" },
+            { id: 8, name: "????? (Rabdi)", price: 400, unit: "????", emoji: "??", category: "sweet" },
+            { id: 9, name: "????? ?????", price: 15, unit: "???", emoji: "??", category: "sweet" },
+            { id: 10, name: "???????? (Rasgulla)", price: 10, unit: "???", emoji: "??", category: "sweet" },
+            { id: 11, name: "?????? (Rasmalai)", price: 15, unit: "???", emoji: "??", category: "sweet" },
+            { id: 12, name: "?????? (Rajbhog)", price: 20, unit: "???", emoji: "??", category: "sweet" },
+            { id: 13, name: "??? ????? (Doodh Barfi)", price: 400, unit: "????", emoji: "??", category: "sweet" },
+            { id: 14, name: "???? ????? (Khoya Barfi)", price: 450, unit: "????", emoji: "??", category: "sweet" },
+            { id: 15, name: "???? ???? (Kaju Katli)", price: 700, unit: "????", emoji: "??", category: "sweet" },
+            { id: 16, name: "???? ????? (Besan Ladoo)", price: 350, unit: "????", emoji: "??", category: "sweet" },
+            { id: 17, name: "????? ????? (Boondi Ladoo)", price: 320, unit: "????", emoji: "??", category: "sweet" },
+            { id: 18, name: "????? (Peda)", price: 12, unit: "???", emoji: "??", category: "sweet" },
+            { id: 19, name: "????? ??? (Milk Cake)", price: 550, unit: "????", emoji: "??", category: "sweet" },
+            { id: 20, name: "??? (Milk)", price: 60, unit: "????", emoji: "??", category: "dairy" },
+            { id: 22, name: "??? ????? ??? (Full Cream)", price: 70, unit: "????", emoji: "??", category: "dairy" }
+        ];
+
+        // Cart and Admin Data
+        let cart = [];
+        let adminPassword = "Indian@2010";
+        let orders = [];
+        let productSettings = {};
+
+        // ==================== INITIALIZE WEBSITE ====================
+        function initWebsite() {
+            console.log("?? Indian Doodh Dairy Starting...");
+
+            // Load from localStorage
+            loadDataFromStorage();
+
+            // Ensure default admin password is set to Indian@2010 so login works
+            // This will overwrite any previously saved admin password to match request
+            adminPassword = 'Indian@2010';
+            localStorage.setItem('dairy_admin_password', adminPassword);
+
+            // Display products
+            loadProducts();
+
+            // Update cart display
+            updateCartDisplay();
+
+            console.log("? Website Ready!");
+        }
+
+        // Load all data from localStorage
+        function loadDataFromStorage() {
+            // Load cart
+            const savedCart = localStorage.getItem('dairy_cart');
+            if (savedCart) {
+                try {
+                    cart = JSON.parse(savedCart);
+                } catch (e) {
+                    cart = [];
+                }
+            }
+
+            // Load orders
+            const savedOrders = localStorage.getItem('dairy_orders');
+            if (savedOrders) {
+                try {
+                    orders = JSON.parse(savedOrders);
+                } catch (e) {
+                    orders = [];
+                }
+            }
+
+            // Load product settings
+            const savedSettings = localStorage.getItem('dairy_product_settings');
+            if (savedSettings) {
+                try {
+                    productSettings = JSON.parse(savedSettings);
+                } catch (e) {
+                    // Initialize default settings
+                    initializeProductSettings();
+                }
+            } else {
+                initializeProductSettings();
+            }
+
+            // Load admin password
+            const savedPassword = localStorage.getItem('dairy_admin_password');
+            if (savedPassword) {
+                adminPassword = savedPassword;
+            }
+        }
+
+        // Initialize default product settings
+        function initializeProductSettings() {
+            productSettings = {};
+            dairyProducts.forEach(product => {
+                productSettings[product.id] = {
+                    price: product.price,
+                    unit: product.unit,
+                    stock: true,
+                    visible: true,
+                    category: product.category
+                };
+            });
+            localStorage.setItem('dairy_product_settings', JSON.stringify(productSettings));
+        }
+
+        // ==================== PRODUCT DISPLAY ====================
+        async function loadProducts() {
+            const container = document.getElementById('productsContainer');
+            container.innerHTML = '';
+            
+            // Fetch products from API first
+            try {
+                const res = await fetch('/api/products');
+                if (res.ok) {
+                    const list = await res.json();
+                    dairyProducts.length = 0;
+                    list.forEach(p => dairyProducts.push({ 
+                        id: p.id, 
+                        name: p.name, 
+                        price: p.price, 
+                        unit: p.unit, 
+                        emoji: '', 
+                        imageUrl: p.imageUrl, 
+                        description: p.description, 
+                        category: p.category 
+                    }));
+                }
+            } catch (e) {
+                console.warn('Could not fetch products from API, using local demo');
+            }
+
+            // Ensure default settings exist for any product (helps when IDs changed between server/local)
+            let settingsCreated = false;
+            dairyProducts.forEach(product => {
+                if (!productSettings) productSettings = {};
+                if (productSettings[product.id] === undefined) {
+                    productSettings[product.id] = {
+                        price: product.price,
+                        unit: product.unit,
+                        stock: true,
+                        visible: true,
+                        category: product.category || ''
+                    };
+                    settingsCreated = true;
+                }
+            });
+            if (settingsCreated) localStorage.setItem('dairy_product_settings', JSON.stringify(productSettings));
+
+            // Filter visible products (hide if admin set visible=false OR stock=false)
+            const visibleProducts = dairyProducts.filter(product => {
+                const settings = productSettings[product.id] || {};
+                return settings.visible !== false && settings.stock !== false;
+            });
+
+            if (visibleProducts.length === 0) {
+                container.innerHTML = '<p style="text-align: center; padding: 50px; color: #888; grid-column: 1/-1;">??? ?????? ?????? ???? ??</p>';
+                return;
+            }
+
+            visibleProducts.forEach(product => {
+                const settings = productSettings[product.id] || {};
+                const cartItem = cart.find(item => item.id === product.id);
+                const qty = cartItem ? cartItem.quantity : 0;
+                const inStock = settings.stock !== false;
+                const price = settings.price || product.price;
+                const unit = settings.unit || product.unit;
+
+                // prefer admin-set image in settings, then product.imageUrl, then inline image/data or emoji
+                const settingsImg = (productSettings[product.id] && productSettings[product.id].imageUrl) || '';
+                const imgSrc = settingsImg || product.imageUrl || (product.image || product.emoji);
+                const isImage = imgSrc && (imgSrc.startsWith('/') || imgSrc.startsWith('data:') || imgSrc.startsWith('http'));
+                const productHTML = `
+                    <div class="product-card">
+                        <div class="product-image">
+                            ${isImage ? `<img src="${imgSrc}" alt="${product.name}">` : `<div class="product-emoji">${product.emoji||'??'}</div>`}
+                        </div>
+                        <div class="product-info">
+                            <div class="product-name">${product.name}</div>
+                            <div class="product-price">?${price}</div>
+                            <div class="product-unit">????? ${unit}</div>
+                            
+                            <div class="quantity-controls">
+                                <button class="qty-btn" onclick="changeQuantity('${product.id}', -1)" ${!inStock ? 'disabled' : ''}>-</button>
+                                ${product.unit === 'piece' ? `
+                                    <select class="qty-input" id="qty${product.id}" onchange="setQuantity('${product.id}', this.value)" ${!inStock ? 'disabled' : ''}>
+                                        <option value="0">0</option>
+                                        <option value="1">1 piece</option>
+                                        <option value="2">2 pieces</option>
+                                        <option value="3">3 pieces</option>
+                                        <option value="4">4 pieces</option>
+                                        <option value="5">5 pieces</option>
+                                        <option value="6">6 pieces</option>
+                                        <option value="7">7 pieces</option>
+                                        <option value="8">8 pieces</option>
+                                        <option value="9">9 pieces</option>
+                                        <option value="10">10 pieces</option>
+                                        <option value="12">12 pieces</option>
+                                        <option value="15">15 pieces</option>
+                                        <option value="20">20 pieces</option>
+                                        <option value="25">25 pieces</option>
+                                        <option value="50">50 pieces</option>
+                                    </select>
+                                ` : `
+                                    <select class="qty-input" id="qty${product.id}" onchange="setQuantity('${product.id}', this.value)" ${!inStock ? 'disabled' : ''}>
+                                        <option value="0">0</option>
+                                        <option value="0.25">250gm</option>
+                                        <option value="0.3">300gm</option>
+                                        <option value="0.5">500gm</option>
+                                        <option value="0.75">750gm</option>
+                                        <option value="1">1 kg</option>
+                                        <option value="1.25">1.25 kg</option>
+                                        <option value="1.5">1.5 kg</option>
+                                        <option value="2">2 kg</option>
+                                    </select>
+                                `}
+                                <button class="qty-btn" onclick="changeQuantity('${product.id}', 1)" ${!inStock ? 'disabled' : ''}>+</button>
+                            </div>
+                            
+                            <button class="add-to-cart" onclick="addToCart('${product.id}')" ${!inStock ? 'disabled' : ''}>
+                                <span>??</span> ${inStock ? '????? ??? ?????' : '??? ?????? ????'}
+                            </button>
+                        </div>
+                    </div>
+                `;
+
+                container.innerHTML += productHTML;
+            });
+        }
+
+        // ==================== CART FUNCTIONS ====================
+        function changeQuantity(productId, change) {
+            const select = document.getElementById(`qty${productId}`);
+            const currentValue = parseFloat(select.value) || 0;
+            let newValue = currentValue + change;
+            
+            // Check if product is sold by pieces
+            // product already declared above
+            if (product && product.unit === 'piece') {
+                // For pieces, use integer values
+                const validValues = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 15, 20, 25, 50];
+                if (newValue < 0) newValue = 0;
+                if (newValue > 50) newValue = 50;
+                
+                // Find closest valid value
+                let closestValue = validValues[0];
+                let minDiff = Math.abs(newValue - closestValue);
+                for (let val of validValues) {
+                    let diff = Math.abs(newValue - val);
+                    if (diff < minDiff) {
+                        minDiff = diff;
+                        closestValue = val;
+                    }
+                }
+                
+                select.value = closestValue;
+                updateCartItem(productId, closestValue);
+            } else {
+                // For weight items, use decimal values
+                const validValues = [0, 0.25, 0.3, 0.5, 0.75, 1, 1.25, 1.5, 2];
+                if (newValue < 0) newValue = 0;
+                if (newValue > 2) newValue = 2;
+                
+                // Find closest valid value
+                let closestValue = validValues[0];
+                let minDiff = Math.abs(newValue - closestValue);
+                for (let val of validValues) {
+                    let diff = Math.abs(newValue - val);
+                    if (diff < minDiff) {
+                        minDiff = diff;
+                        closestValue = val;
+                    }
+                }
+                
+                select.value = closestValue;
+                updateCartItem(productId, closestValue);
+            }
+        }
+
+        function setQuantity(productId, quantity) {
+            quantity = parseFloat(quantity) || 0;
+            if (quantity < 0) quantity = 0;
+            updateCartItem(productId, quantity);
+        }
+
+        function addToCart(productId) {
+            const select = document.getElementById(`qty${productId}`);
+            let quantity = parseFloat(select.value) || 1;
+            
+            // Check if product is sold by pieces
+            // product already declared above
+            if (product && product.unit === 'piece') {
+                if (quantity < 1) quantity = 1;
+            } else {
+                if (quantity < 0.25) quantity = 0.25;
+            }
+            
+            select.value = quantity;
+            updateCartItem(productId, quantity);
+
+            // product already declared above
+            showNotification(`${product.name} ????? ??? ??? ???? ???!`, 'success');
+        }
+
+        function updateCartItem(productId, quantity) {
+            const settings = productSettings[productId];
+
+            // Check if product is available
+            if (settings && settings.stock === false) {
+                showNotification('?? ?????? ??? ?????? ???? ??!', 'error');
+                return;
+            }
+
+            // Remove from cart if quantity is 0
+            cart = cart.filter(item => item.id !== productId);
+
+            if (quantity > 0) {
+                // product already declared above
+                const price = settings ? settings.price : product.price;
+                const unit = settings ? settings.unit : product.unit;
+
+                cart.push({
+                    id: productId,
+                    name: product.name,
+                    price: price,
+                    unit: unit,
+                    quantity: quantity
+                });
+            }
+
+            // Save cart
+            localStorage.setItem('dairy_cart', JSON.stringify(cart));
+
+            // Update display
+            updateCartDisplay();
+        }
+
+        function updateCartDisplay() {
+            const container = document.getElementById('cartItems');
+            const totalEl = document.getElementById('totalAmount');
+
+            if (cart.length === 0) {
+                container.innerHTML = '<p style="text-align: center; color: #888; padding: 40px 0;">???? ????? ??? ???? ??</p>';
+                totalEl.textContent = '0';
+                return;
+            }
+
+            let html = '';
+            let total = 0;
+
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+
+                html += `
+                    <div class="cart-item">
+                        <div style="font-weight: 600;">${item.name}</div>
+                        <div>
+                            <span>?${item.price}/${item.unit} � ${item.quantity}</span>
+                            <strong style="color: var(--green); margin-left: 15px;">?${itemTotal}</strong>
+                        </div>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+            totalEl.textContent = total;
+        }
+
+        // ==================== ORDER PLACEMENT ====================
+        function placeOrder() {
+            if (cart.length === 0) {
+                showNotification('????? ???? ??? ?????? ????? ??? ?????!', 'error');
+                return;
+            }
+
+            const name = document.getElementById('customerName').value.trim();
+            const phone = document.getElementById('customerPhone').value.trim();
+            const address = document.getElementById('customerAddress').value.trim();
+
+            if (!name || !phone || !address) {
+                showNotification('????? ??? ????? ????!', 'error');
+                return;
+            }
+
+            if (phone.length < 10) {
+                showNotification('????? ??? ??? ???? ?????!', 'error');
+                return;
+            }
+
+            // Create order
+            const order = {
+                id: 'DD' + Date.now(),
+                customerName: name,
+                customerPhone: phone,
+                customerAddress: address,
+                items: cart.map(item => ({
+                    name: item.name,
+                    price: item.price,
+                    unit: item.unit,
+                    quantity: item.quantity,
+                    total: item.price * item.quantity
+                })),
+                totalAmount: cart.reduce((sum, item) => sum + (item.price * item.quantity), 0),
+                date: new Date().toLocaleString('hi-IN'),
+                status: '??? ?????',
+                deliveryStatus: '???????'
+            };
+
+            // Try to POST to backend first (if available), otherwise fallback to localStorage
+            (async () => {
+                try {
+                    const res = await fetch('/api/orders', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ customerName: name, customerPhone: phone, customerAddress: address, items: order.items, totalAmount: order.totalAmount })
+                    });
+                    if (res.ok) {
+                        const body = await res.json();
+                        // backend returns order object in body.order when successful
+                        const savedOrder = body.order || { ...order };
+                        orders.push(savedOrder);
+                        localStorage.setItem('dairy_orders', JSON.stringify(orders));
+                    } else {
+                        // backend rejected; fallback to local save
+                        orders.push(order);
+                        localStorage.setItem('dairy_orders', JSON.stringify(orders));
+                    }
+                } catch (err) {
+                    // network/backend not available: fallback to local
+                    orders.push(order);
+                    localStorage.setItem('dairy_orders', JSON.stringify(orders));
+                }
+
+                // Show success message and details to customer
+                showNotification('? ????? ??????????? ???? ???!', 'success');
+                const orderMessage = `\n                ??????? ${name}!\n                \n                ?? ????? ID: ${orders[orders.length-1].orderId || orders[orders.length-1].id}\n                ?? ??? ????: ?${order.totalAmount}\n                ?? ???????: ${address.substring(0, 50)}...\n                ?? ?? ???? ?? ???? ?????? ??????!\n                \n                ???? ????? ????: ${orders.length}`;
+                alert(orderMessage);
+
+                // Clear form and cart
+                cart = [];
+                localStorage.setItem('dairy_cart', JSON.stringify(cart));
+                document.getElementById('customerName').value = '';
+                document.getElementById('customerPhone').value = '';
+                document.getElementById('customerAddress').value = '';
+
+                // Update display
+                loadProducts();
+                updateCartDisplay();
+
+                // Attempt to notify admin in this tab (if open)
+                if (document.getElementById('adminModal') && document.getElementById('adminModal').style.display === 'flex') {
+                    loadOrdersTable();
+                }
+
+                // Also log/console for debugging
+                console.log('Order placed and saved locally/backend (if available)');
+
+                // Try to automatically open WhatsApp chats to admin numbers (one tab per number)
+                try {
+                    const saved = orders[orders.length-1];
+                    const orderId = saved.orderId || saved.id || order.id;
+                    const numbers = getAdminNumbers();
+                    if (numbers && numbers.length) {
+                        const itemsText = order.items.map(i => `� ${i.name} x${i.quantity} = ?${i.total}`).join('%0A');
+                        const msg = encodeURIComponent(`??? ?????: ${orderId}%0A??????: ${name}%0A???: ${phone}%0A???: ?${order.totalAmount}%0A??????:%0A${itemsText}%0A???: ${address}`);
+                        numbers.forEach(num => {
+                            const url = `https://wa.me/${num}?text=${msg}`;
+                            try { window.open(url, '_blank'); } catch (e) { console.warn('Could not open WA tab', e); }
+                        });
+                    }
+                } catch (e) {
+                    console.warn('auto WA notify failed', e);
+                }
+            })();
+        }
+
+        // Send WhatsApp notification to Admin
+        function sendOrderNotification(order) {
+            try {
+                const numbers = getAdminNumbers();
+                const orderId = order.orderId || order.id || '';
+                const itemsText = (order.items || []).map(i => `� ${i.name} - ${i.quantity} ${i.unit} (?${i.total || (i.price*i.quantity)})`).join('%0A');
+                const msg = encodeURIComponent(`?? ??? ?????!%0A????? ID: ${orderId}%0A??????: ${order.customerName}%0A???: ${order.customerPhone}%0A???: ?${order.totalAmount}%0A??????:%0A${itemsText}%0A???: ${order.customerAddress}`);
+                console.log('?? Notifying admin numbers:', numbers);
+                numbers.forEach(num => {
+                    const url = `https://wa.me/${num}?text=${msg}`;
+                    try { window.open(url, '_blank'); } catch (e) { console.warn('Could not open WA', e); }
+                });
+            } catch (err) {
+                console.warn('sendOrderNotification failed', err);
+            }
+        }
+
+        // ==================== ADMIN FUNCTIONS ====================
+        function getAuthHeaders(){
+            const token = localStorage.getItem('dairy_admin_jwt');
+            return token ? { 'Authorization': 'Bearer ' + token } : {};
+        }
+
+        function openAdminLogin() {
+            // If admin token present, open admin panel fullscreen; otherwise show login modal
+            const token = localStorage.getItem('dairy_admin_jwt');
+            if (token) {
+                const adminModal = document.getElementById('adminModal');
+                const content = adminModal.querySelector('.modal-content');
+                adminModal.style.display = 'flex';
+                // make admin panel full-screen for easier management
+                if (content) {
+                    content.style.width = '100%';
+                    content.style.maxWidth = '100%';
+                    content.style.height = '100vh';
+                    content.style.borderRadius = '0';
+                    content.style.left = '0';
+                    content.style.top = '0';
+                }
+                enableAdminDragging();
+                showTab('orders');
+                return;
+            }
+            document.getElementById('loginModal').style.display = 'flex';
+            document.getElementById('adminPassword').focus();
+        }
+
+        function closeLogin() {
+            document.getElementById('loginModal').style.display = 'none';
+            document.getElementById('adminPassword').value = '';
+        }
+
+        async function loginAdmin() {
+            const password = document.getElementById('adminPassword').value;
+            const payload = { username: 'admin', password };
+            try{
+                const res = await fetch('/api/auth/login', { method: 'POST', headers: { 'Content-Type':'application/json' }, body: JSON.stringify(payload) });
+                if (res.ok){
+                    const body = await res.json();
+                    const token = body.token;
+                    if (token){
+                        localStorage.setItem('dairy_admin_jwt', token);
+                        closeLogin();
+                        // open admin fullscreen
+                        const adminModal = document.getElementById('adminModal');
+                        const content = adminModal.querySelector('.modal-content');
+                        adminModal.style.display = 'flex';
+                        if (content) {
+                            content.style.width = '100%'; content.style.maxWidth = '100%'; content.style.height = '100vh'; content.style.borderRadius = '0'; content.style.left = '0'; content.style.top = '0';
+                        }
+                        enableAdminDragging();
+                        showTab('orders');
+                        showNotification('? Admin login successful!', 'success');
+                        return;
+                    }
+                } else {
+                    // Backend rejected login; try local password fallback
+                    if (password === adminPassword) {
+                        localStorage.setItem('dairy_admin_jwt', 'local-fallback');
+                        closeLogin();
+                        const adminModal = document.getElementById('adminModal');
+                        const content = adminModal.querySelector('.modal-content');
+                        adminModal.style.display = 'flex';
+                        if (content) { content.style.width = '100%'; content.style.maxWidth = '100%'; content.style.height = '100vh'; content.style.borderRadius = '0'; content.style.left = '0'; content.style.top = '0'; }
+                        enableAdminDragging();
+                        showTab('orders');
+                        showNotification('? Admin login successful (local)!', 'success');
+                        return;
+                    }
+                    showNotification('? Login failed', 'error');
+                    return;
+                }
+            }catch(e){
+                // fallback to local password check
+                if (password === adminPassword) {
+                    localStorage.setItem('dairy_admin_jwt', 'local-fallback');
+                    closeLogin();
+                    // open admin fullscreen
+                    const adminModal = document.getElementById('adminModal');
+                    const content = adminModal.querySelector('.modal-content');
+                    adminModal.style.display = 'flex';
+                    if (content) { content.style.width = '100%'; content.style.maxWidth = '100%'; content.style.height = '100vh'; content.style.borderRadius = '0'; content.style.left = '0'; content.style.top = '0'; }
+                    enableAdminDragging();
+                    showTab('orders');
+                    showNotification('? Admin login successful (local)!', 'success');
+                } else {
+                    showNotification('? Wrong password! Try: Indian@2010', 'error');
+                }
+            }
+        }
+
+        function closeAdmin() {
+            // Keep JWT so admin remains logged in across sessions; just hide panel
+            document.getElementById('adminModal').style.display = 'none';
+            disableAdminDragging();
+        }
+
+        function logoutAdmin(){
+            localStorage.removeItem('dairy_admin_jwt');
+            document.getElementById('adminModal').style.display = 'none';
+            disableAdminDragging();
+            showNotification('? Admin logged out', 'success');
+        }
+
+        // Normalize and return admin numbers as array; default to two known numbers
+        function getAdminNumbers() {
+            const raw = (localStorage.getItem('dairy_admin_contact') || '7007120750,9807235659').trim();
+            const parts = raw.split(/[,;\s]+/).filter(Boolean);
+            return parts.map(n => {
+                const digits = (n || '').replace(/\D/g, '');
+                if (!digits) return null;
+                // if 10 digits assume India and prefix 91
+                if (digits.length === 10) return '91' + digits;
+                return digits; // assume already has country code
+            }).filter(Boolean);
+        }
+
+        // Draggable admin modal implementation (pointer events, works for mouse & touch)
+        let _adminDrag = { on: false, startX: 0, startY: 0, origX: 0, origY: 0, el: null };
+        function enableAdminDragging(){
+            const modal = document.getElementById('adminModal');
+            if(!modal) return;
+            const content = modal.querySelector('.modal-content');
+            if(!content) return;
+            content.classList.add('draggable');
+            // center if not positioned yet
+            if(!content.style.left) {
+                content.style.left = (window.innerWidth - content.offsetWidth)/2 + 'px';
+                content.style.top = Math.max(40, (window.innerHeight - content.offsetHeight)/6) + 'px';
+            }
+            const header = content.querySelector('.modal-header');
+            if(!header) return;
+
+            header.style.touchAction = 'none';
+
+            header.addEventListener('pointerdown', _onPointerDown);
+            window.addEventListener('pointermove', _onPointerMove);
+            window.addEventListener('pointerup', _onPointerUp);
+            _adminDrag.el = content;
+        }
+        function disableAdminDragging(){
+            const modal = document.getElementById('adminModal');
+            if(!modal) return;
+            const content = modal.querySelector('.modal-content');
+            if(!content) return;
+            content.classList.remove('draggable');
+            const header = content.querySelector('.modal-header');
+            if(header){ header.removeEventListener('pointerdown', _onPointerDown); }
+            window.removeEventListener('pointermove', _onPointerMove);
+            window.removeEventListener('pointerup', _onPointerUp);
+            _adminDrag = { on: false, startX: 0, startY: 0, origX: 0, origY: 0, el: null };
+        }
+
+        function _onPointerDown(e){
+            if(!e.isPrimary) return;
+            const el = _adminDrag.el;
+            if(!el) return;
+            _adminDrag.on = true;
+            _adminDrag.startX = e.clientX;
+            _adminDrag.startY = e.clientY;
+            _adminDrag.origX = parseFloat(el.style.left || 0);
+            _adminDrag.origY = parseFloat(el.style.top || 0);
+            try { e.target.setPointerCapture(e.pointerId); } catch(_){}
+        }
+        function _onPointerMove(e){
+            if(!_adminDrag.on) return;
+            const el = _adminDrag.el;
+            const dx = e.clientX - _adminDrag.startX;
+            const dy = e.clientY - _adminDrag.startY;
+            el.style.left = (_adminDrag.origX + dx) + 'px';
+            el.style.top = Math.max(8, _adminDrag.origY + dy) + 'px';
+        }
+        function _onPointerUp(e){
+            if(!_adminDrag.on) return;
+            _adminDrag.on = false;
+            try { e.target.releasePointerCapture && e.target.releasePointerCapture(e.pointerId); } catch(_){}
+        }
+
+        function showTab(tabName, ev) {
+            // Hide all tabs
+            document.getElementById('ordersTab').style.display = 'none';
+            document.getElementById('productsTab').style.display = 'none';
+            document.getElementById('settingsTab').style.display = 'none';
+
+            // Remove active class
+            document.querySelectorAll('.admin-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // Add active class to clicked tab
+            if (ev && ev.currentTarget) ev.currentTarget.classList.add('active');
+            else {
+                // fallback: try to find a button with matching text
+                const btn = Array.from(document.querySelectorAll('.admin-tab')).find(b => b.textContent.toLowerCase().includes(tabName));
+                if (btn) btn.classList.add('active');
+            }
+
+            // Show selected tab
+            document.getElementById(tabName + 'Tab').style.display = 'block';
+
+            // Load data
+            if (tabName === 'orders') loadOrdersTable();
+            else if (tabName === 'products') loadProductsTable();
+        }
+
+        function loadOrdersTable() {
+            const tbody = document.getElementById('ordersTableBody');
+
+            if (orders.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="6" style="text-align: center; padding: 40px; color: #888;">??? ????? ????</td></tr>';
+                return;
+            }
+
+            let html = '';
+            orders.forEach(order => {
+                const oid = order.orderId || order.id || '';
+                const items = (order.items || []).map(i => `${i.name} x${i.quantity || 1}`).join(', ');
+                html += `
+                    <tr onclick="openOrderDetails('${oid}')" style="cursor:pointer">
+                        <td><strong style="color: var(--blue);">${oid}</strong></td>
+                        <td>${order.customerName || ''}</td>
+                        <td>${order.customerPhone || ''}</td>
+                        <td style="max-width:280px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${items}</td>
+                        <td style="color:var(--green); font-weight:800">?${order.totalAmount || 0}</td>
+                        <td>
+                            <select class="status-select" onchange="updateOrderStatus('${oid}', this.value)">
+                                <option ${order.status === '??? ?????' ? 'selected' : ''}>??? ?????</option>
+                                <option ${order.status === '????? ?? ???' ? 'selected' : ''}>????? ?? ???</option>
+                                <option ${order.status === '??????? ?? ???' ? 'selected' : ''}>??????? ?? ???</option>
+                                <option ${order.status === '?????' ? 'selected' : ''}>?????</option>
+                            </select>
+                        </td>
+                        <td>${order.date || ''}</td>
+                        <td style="white-space:nowrap">
+                            <button class="update-btn" onclick="openOrderDetails('${oid}'); event.stopPropagation();">?????</button>
+                            <button style="margin-left:8px;background:#dc3545;color:#fff;border:none;padding:6px 10px;border-radius:6px;" onclick="deleteOrder('${oid}'); event.stopPropagation();">?????</button>
+                        </td>
+                    </tr>
+                `;
+            });
+
+            tbody.innerHTML = html;
+        }
+
+        function loadProductsTable() {
+            const tbody = document.getElementById('productsTableBody');
+
+            let html = '';
+            dairyProducts.forEach(product => {
+                const settings = productSettings[product.id] || {};
+
+                html += `
+                    <tr>
+                        <td><strong>${product.name}</strong></td>
+                        <td>
+                            <input type="number" id="adminPrice${product.id}" value="${settings.price || product.price}" 
+                                   style="width: 100px; padding: 8px; border: 2px solid #ddd; border-radius: 5px;">
+                        </td>
+                        <td>
+                            <select id="adminStock${product.id}" style="padding: 8px; border: 2px solid #ddd; border-radius: 5px;">
+                                <option value="true" ${settings.stock !== false ? 'selected' : ''}>??????</option>
+                                <option value="false" ${settings.stock === false ? 'selected' : ''}>????????</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select id="adminVisible${product.id}" style="padding: 8px; border: 2px solid #ddd; border-radius: 5px;">
+                                <option value="true" ${settings.visible !== false ? 'selected' : ''}>??????</option>
+                                <option value="false" ${settings.visible === false ? 'selected' : ''}>??????</option>
+                            </select>
+                        </td>
+                                        <td>
+                                            <button class="update-btn" onclick="updateProduct('${product.id}')">?????</button>
+                                            <button style="margin-left:8px;background:#dc3545;color:#fff;border:none;padding:6px 10px;border-radius:6px;" onclick="deleteProduct('${product.id}')">?????</button>
+                                            <button style="margin-left:8px;background:#0b3b5c;color:#fff;border:none;padding:6px 10px;border-radius:6px;" onclick="openChangeImage('${product.id}')">Change Image</button>
+                                        </td>
+                    </tr>
+                `;
+            });
+
+            tbody.innerHTML = html;
+        }
+
+        function updateOrderStatus(orderId, status) {
+            const orderIndex = orders.findIndex(o => o.id === orderId);
+            if (orderIndex !== -1) {
+                orders[orderIndex].status = status;
+                localStorage.setItem('dairy_orders', JSON.stringify(orders));
+                showNotification(`? ????? ${orderId} ?? ?????? ????? ?? ??!`, 'success');
+            }
+        }
+
+        async function deleteOrder(orderId) {
+            if (!confirm('???? ?? ???? ?? ????? ?? ????? ????? ????')) return;
+            try {
+                // Try server delete
+                const res = await fetch('/api/orders/' + encodeURIComponent(orderId), { method: 'DELETE' });
+                if (res.ok) {
+                    orders = orders.filter(o => (o.orderId || o.id || '') !== orderId);
+                    localStorage.setItem('dairy_orders', JSON.stringify(orders));
+                    loadOrdersTable();
+                    showNotification('? ????? ??? ???? ???', 'success');
+                    return;
+                }
+            } catch (e) { console.warn('Server delete failed, removing locally', e); }
+            // Fallback: remove locally
+            orders = orders.filter(o => (o.orderId || o.id || '') !== orderId);
+            localStorage.setItem('dairy_orders', JSON.stringify(orders));
+            loadOrdersTable();
+            showNotification('? ????? local ?? ??? ???? ???', 'success');
+        }
+
+        function updateProduct(productId) {
+            const price = parseFloat(document.getElementById(`adminPrice${productId}`).value);
+            const stock = document.getElementById(`adminStock${productId}`).value === 'true';
+            const visible = document.getElementById(`adminVisible${productId}`).value === 'true';
+
+            if (!price || price < 1) {
+                showNotification('? ????? ??? ???? ?????!', 'error');
+                return;
+            }
+
+            // Update product settings
+            if (!productSettings[productId]) {
+                productSettings[productId] = {};
+            }
+
+            productSettings[productId].price = price;
+            productSettings[productId].stock = stock;
+            productSettings[productId].visible = visible;
+
+            // Save to localStorage
+            localStorage.setItem('dairy_product_settings', JSON.stringify(productSettings));
+
+            // Reload products for customers
+            loadProducts();
+
+            // product already declared above
+            showNotification(`? ${product.name} ????? ???? ???!`, 'success');
+
+            // Try to persist change to backend via PUT (requires auth)
+            (async ()=>{
+                try{
+                    const headers = Object.assign({ 'Content-Type':'application/json' }, getAuthHeaders());
+                    const patch = { price: productSettings[productId].price, inStock: productSettings[productId].stock, imageUrl: productSettings[productId].imageUrl, unit: productSettings[productId].unit };
+                    const res = await fetch('/api/products/'+encodeURIComponent(productId), { method: 'PUT', headers, body: JSON.stringify(patch) });
+                    if(!res.ok) console.warn('Backend update responded', res.status);
+                }catch(e){ console.warn('Backend update failed', e); }
+            })();
+        }
+
+        // Admin: create product from modal (local-only, and will attempt backend POST if available)
+        function openCreateProductModal(){
+            document.getElementById('createProductModal').style.display = 'block';
+            document.getElementById('new_p_id').value = `p-${Date.now()}`;
+        }
+        function closeCreateProductModal(){
+            document.getElementById('createProductModal').style.display = 'none';
+        }
+
+        async function createProductFromAdminModal(){
+            const id = document.getElementById('new_p_id').value.trim();
+            const name = document.getElementById('new_p_name').value.trim();
+            const category = document.getElementById('new_p_category').value.trim() || 'dairy';
+            const price = parseFloat(document.getElementById('new_p_price').value) || 0;
+            const unit = document.getElementById('new_p_unit').value.trim() || '1 kg';
+            const imageUrl = document.getElementById('new_p_image').value.trim() || '';
+            const desc = document.getElementById('new_p_desc').value.trim() || '';
+
+            if(!id || !name || price <= 0){ showNotification('????? valid id, ??? ?? ???? ???', 'error'); return; }
+
+            const product = { id: id, name, price, unit, imageUrl, description: desc, category };
+
+            // Add to local array and settings
+            dairyProducts.push(product);
+            productSettings[id] = { price, unit, stock: true, visible: true, category };
+            localStorage.setItem('dairy_product_settings', JSON.stringify(productSettings));
+            showNotification('? ??? ?????? ????? ??? (local)', 'success');
+            closeCreateProductModal();
+            loadProductsTable();
+            loadProducts();
+
+            // Try to POST to backend /api/products (requires admin JWT). If fails, ignore but keep local item.
+            try{
+                const headers = Object.assign({ 'Content-Type':'application/json' }, getAuthHeaders());
+                const res = await fetch('/api/products',{ method: 'POST', headers, body: JSON.stringify({ name, category, price, mrp: price, unit, imageUrl, description: desc, inStock: true }) });
+                if (res.ok) console.log('Posted new product to backend');
+                else console.warn('Backend create responded', res.status);
+            }catch(e){ console.warn('Backend create failed (ok to ignore in dev)'); }
+        }
+
+        // Admin: delete product (local + attempt backend delete)
+        async function deleteProduct(productId){
+            if(!confirm('???? ?? ???? ?? ?????? ?? ????? ????? ????')) return;
+            // Remove from dairyProducts
+            const idx = dairyProducts.findIndex(p=>p.id===productId);
+            if(idx!==-1) dairyProducts.splice(idx,1);
+            // Remove settings
+            if(productSettings && productSettings[productId]) delete productSettings[productId];
+            localStorage.setItem('dairy_product_settings', JSON.stringify(productSettings));
+            showNotification('? ?????? local ?? ??? ???? ???', 'success');
+            loadProductsTable(); loadProducts();
+            // Attempt backend delete (may require auth) - ignore failures
+            try{
+                const headers = getAuthHeaders();
+                const res = await fetch('/api/products/'+encodeURIComponent(productId),{ method: 'DELETE', headers });
+                if (res.ok) console.log('Backend delete ok'); else console.warn('Backend delete responded', res.status);
+            }catch(e){ console.warn('Backend delete failed (may require auth)'); }
+        }
+
+        // Admin: change image via file selection (stores data URL in productSettings.imageUrl)
+        function openChangeImage(productId){
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = 'image/*';
+            input.onchange = async (e)=>{
+                const file = e.target.files[0];
+                if(!file) return;
+                // try server upload
+                try{
+                    const fd = new FormData();
+                    fd.append('image', file);
+                    const headers = getAuthHeaders();
+                    const res = await fetch('/api/upload', { method: 'POST', headers, body: fd });
+                    if (res.ok){
+                        const body = await res.json();
+                        const imageUrl = body.imageUrl;
+                        if(!productSettings[productId]) productSettings[productId] = { price:0, unit:'1 kg', stock:true, visible:true };
+                        productSettings[productId].imageUrl = imageUrl;
+                        localStorage.setItem('dairy_product_settings', JSON.stringify(productSettings));
+                        showNotification('? Image uploaded and set for product', 'success');
+                        loadProducts(); loadProductsTable();
+                        // try persist to backend product record
+                        try{ await fetch('/api/products/'+encodeURIComponent(productId), { method: 'PUT', headers: Object.assign({ 'Content-Type':'application/json' }, getAuthHeaders()), body: JSON.stringify({ imageUrl }) }); }catch(e){}
+                        return;
+                    }
+                }catch(e){ console.warn('Upload failed, falling back to local dataURL'); }
+                // fallback: store local data URL
+                const reader = new FileReader();
+                reader.onload = function(ev){
+                    const dataUrl = ev.target.result;
+                    if(!productSettings[productId]) productSettings[productId] = { price:0, unit:'1 kg', stock:true, visible:true };
+                    productSettings[productId].imageUrl = dataUrl;
+                    localStorage.setItem('dairy_product_settings', JSON.stringify(productSettings));
+                    showNotification('? Image set locally for product', 'success');
+                    loadProducts(); loadProductsTable();
+                };
+                reader.readAsDataURL(file);
+            };
+            input.click();
+        }
+
+        function changePassword() {
+            const current = document.getElementById('currentPassword').value;
+            const newPass = document.getElementById('newPassword').value;
+            const confirm = document.getElementById('confirmPassword').value;
+
+            if (current !== adminPassword) {
+                showNotification('? ??????? ??????? ??? ??!', 'error');
+                return;
+            }
+
+            if (newPass.length < 6) {
+                showNotification('? ??? ??????? ?? ?? ?? 6 characters ?? ???? ?????!', 'error');
+                return;
+            }
+
+            if (newPass !== confirm) {
+                showNotification('? ??? ??????? ??? ???? ????!', 'error');
+                return;
+            }
+
+            adminPassword = newPass;
+            localStorage.setItem('dairy_admin_password', newPass);
+
+            document.getElementById('currentPassword').value = '';
+            document.getElementById('newPassword').value = '';
+            document.getElementById('confirmPassword').value = '';
+
+            showNotification('? ??????? ??? ???? ???!', 'success');
+        }
+
+        // Admin contact persistence
+        function saveAdminContact(){
+            const v = document.getElementById('adminContact').value.trim();
+            if(!v) { showNotification('Enter contact number(s)', 'error'); return; }
+            localStorage.setItem('dairy_admin_contact', v);
+            showNotification('? Admin contact saved', 'success');
+        }
+        function populateAdminContact(){
+            const v = localStorage.getItem('dairy_admin_contact');
+            document.getElementById('adminContact').value = v || '7007120750,9807235659';
+            showNotification('? Admin contact loaded', 'success');
+        }
+
+        // Order details modal
+        let __currentOrderIdForModal = null;
+        function openOrderDetails(orderId){
+            __currentOrderIdForModal = orderId;
+            const order = orders.find(o => (o.orderId||o.id||'') === orderId);
+            if(!order) return showNotification('Order not found','error');
+            document.getElementById('orderDetailsTitle').textContent = `Order ${orderId} � ${order.customerName || ''}`;
+            const body = document.getElementById('orderDetailsBody');
+            let html = `<p><strong>Phone:</strong> ${order.customerPhone || ''}</p><p><strong>Address:</strong> ${order.customerAddress || ''}</p><hr>`;
+            html += '<ul style="margin-left:18px">';
+            (order.items || []).forEach(it => {
+                html += `<li style="margin:6px 0"><strong>${it.name}</strong> � ${it.quantity || 1} � ?${it.price} = <strong>?${(it.price*(it.quantity||1)).toFixed(2)}</strong></li>`;
+            });
+            html += '</ul>';
+            html += `<div style="margin-top:12px;font-weight:800;color:var(--green)">Total: ?${order.totalAmount || 0}</div>`;
+            body.innerHTML = html;
+            document.getElementById('orderDetailsModal').style.display = 'flex';
+        }
+        function closeOrderDetails(){ document.getElementById('orderDetailsModal').style.display = 'none'; __currentOrderIdForModal = null; }
+
+        function sendWhatsAppForCurrentOrder(){
+            if(!__currentOrderIdForModal) return showNotification('No order selected','error');
+            const ord = orders.find(o => (o.orderId||o.id||'') === __currentOrderIdForModal);
+            if(!ord) return showNotification('Order not found','error');
+            const numbers = getAdminNumbers();
+            if(!numbers || numbers.length === 0) return showNotification('Admin contact not set in Settings','error');
+            const items = (ord.items || []).map(i => `${i.name} x${i.quantity||1}`).join('%0A');
+            const msg = encodeURIComponent(`??? ?????: ${__currentOrderIdForModal}%0ACustomer: ${ord.customerName || ''}%0APhone: ${ord.customerPhone || ''}%0AItems:%0A${items}%0ATotal: ?${ord.totalAmount || 0}`);
+            numbers.forEach(n => { try { window.open(`https://wa.me/${n}?text=${msg}`, '_blank'); } catch(_){} });
+            showNotification('Opening WhatsApp for admins...', 'success');
+        }
+
+        // ==================== NOTIFICATION SYSTEM ====================
+        function showNotification(message, type = 'success') {
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.innerHTML = `
+                <span>${type === 'success' ? '?' : '?'} ${message}</span>
+            `;
+
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+
+        // Listen for orders added in other tabs/windows and notify admin
+        window.addEventListener('storage', (e) => {
+            if (e.key === 'dairy_orders') {
+                try {
+                    const newOrders = JSON.parse(e.newValue || '[]');
+                    const oldOrders = JSON.parse(e.oldValue || '[]');
+                    if (newOrders.length > oldOrders.length) {
+                        const latest = newOrders[newOrders.length - 1];
+                        const who = latest.customerName || latest.name || 'Customer';
+                        showNotification(`??? ?????: ${who}`, 'success');
+                        // If admin modal is open, refresh the table
+                        if (document.getElementById('adminModal') && document.getElementById('adminModal').style.display === 'flex') {
+                            orders = newOrders;
+                            loadOrdersTable();
+                        } else {
+                            // update local orders var so admin sees when opening
+                            orders = newOrders;
+                            localStorage.setItem('dairy_orders', JSON.stringify(orders));
+                        }
+                    }
+                } catch (err) { console.warn('Failed to parse dairy_orders in storage event'); }
+            }
+        });
+
+        // Fetch live products from API and then initialize
+        async function fetchAndInit() {
+            try {
+                const res = await fetch('/api/products');
+                if (res.ok) {
+                    const list = await res.json();
+                    // Map to local shape used by the UI
+                    dairyProducts.length = 0;
+                    list.forEach(p => dairyProducts.push({ id: p.id, name: p.name, price: p.price, unit: p.unit, emoji: '', imageUrl: p.imageUrl, description: p.description, category: p.category }));
+                }
+            } catch (e) {
+                console.warn('Could not fetch products from API, using local demo');
+            }
+        }
+
+        // Initialize website when DOM is loaded
+        document.addEventListener('DOMContentLoaded', initWebsite);
+        
+        // Also call fetchAndInit to load products from API
+        fetchAndInit();
+    </script>
+</body>
+
+</html>
+
+
