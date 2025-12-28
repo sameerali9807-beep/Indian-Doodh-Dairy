@@ -820,6 +820,14 @@
         let orders = [];
         let productSettings = {};
 
+        const isGithubPages = location.hostname.endsWith('github.io');
+        const repoBasePath = isGithubPages ? ('/' + String(location.pathname || '').split('/').filter(Boolean)[0]) : '';
+        function resolveImageUrl(url) {
+            if (!url) return url;
+            if (isGithubPages && url.startsWith('/images/')) return repoBasePath + '/backend' + url;
+            return url;
+        }
+
         // ==================== INITIALIZE WEBSITE ====================
         function initWebsite() {
             console.log("🚀 Indian Doodh Dairy Starting...");
@@ -847,12 +855,14 @@
 
         function applyStoreBranding() {
             const savedLogo = localStorage.getItem('storeLogo');
-            if (savedLogo) {
-                const img = document.getElementById('siteLogo');
-                if (img) img.src = savedLogo;
-                const fb = document.getElementById('logoFallback');
-                if (fb) fb.style.display = 'none';
+            const img = document.getElementById('siteLogo');
+            const fb = document.getElementById('logoFallback');
+            const nextLogo = resolveImageUrl(savedLogo || '/images/Logo.jpg');
+            if (img) {
+                img.src = nextLogo;
+                img.style.display = '';
             }
+            if (fb) fb.style.display = 'none';
 
             const times = getStoreTiming();
             const hoursEl = document.getElementById('storeHours');
@@ -916,7 +926,7 @@
         function loadStoreLogoPreview() {
             const savedLogo = localStorage.getItem('storeLogo');
             const preview = document.getElementById('storeLogoPreview');
-            if (preview) preview.src = savedLogo || '/images/Logo.jpg';
+            if (preview) preview.src = resolveImageUrl(savedLogo || '/images/Logo.jpg');
         }
 
         // Load all data from localStorage
@@ -1167,8 +1177,8 @@
 
                 // prefer admin-set image in settings, then product.imageUrl, then inline image/data or emoji
                 const settingsImg = (productSettings[product.id] && productSettings[product.id].imageUrl) || '';
-                const imgSrc = settingsImg || product.imageUrl || (product.image || product.emoji);
-                const isImage = imgSrc && (imgSrc.startsWith('/') || imgSrc.startsWith('data:') || imgSrc.startsWith('http'));
+                const imgSrc = resolveImageUrl(settingsImg || product.imageUrl || (product.image || product.emoji));
+                const isImage = imgSrc && (imgSrc.startsWith('/') || imgSrc.startsWith('data:') || imgSrc.startsWith('http') || imgSrc.startsWith('./') || imgSrc.startsWith('../'));
                 const productHTML = `
                     <div class="product-card">
                         <div class="product-image">
