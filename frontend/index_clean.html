@@ -2182,15 +2182,24 @@
             }
         });
 
-        // Fetch live products from API and then initialize
+        // Fetch live products from API (local server) or static JSON (GitHub Pages) and then initialize
         async function fetchAndInit() {
             try {
-                const res = await fetch('/api/products');
+                const url = isGithubPages ? (repoBasePath + '/backend/data/products.json') : '/api/products';
+                const res = await fetch(url);
                 if (res.ok) {
                     const list = await res.json();
-                    // Map to local shape used by the UI
                     dairyProducts.length = 0;
-                    list.forEach(p => dairyProducts.push({ id: p.id, name: p.name, price: p.price, unit: p.unit, emoji: '', imageUrl: p.imageUrl, description: p.description, category: p.category }));
+                    list.forEach(p => dairyProducts.push({
+                        id: p.id,
+                        name: p.name,
+                        price: p.price,
+                        unit: p.unit,
+                        emoji: '',
+                        imageUrl: p.imageUrl,
+                        description: p.description,
+                        category: p.category
+                    }));
                 }
             } catch (e) {
                 console.warn('Could not fetch products from API, using local demo');
