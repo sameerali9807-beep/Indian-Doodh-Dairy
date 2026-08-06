@@ -8,10 +8,13 @@
     <style>
         /* TIRANGA COLORS */
         :root {
-            --saffron: #FF6A00; /* brighter saffron */
+            --saffron: #FF6A00;
+            /* brighter saffron */
             --white: #FFFFFF;
-            --green: #1B8A4A; /* fresh green */
-            --blue: #0B3B5C; /* deep blue for accents */
+            --green: #1B8A4A;
+            /* fresh green */
+            --blue: #0B3B5C;
+            /* deep blue for accents */
             --muted: #f3f6f4;
         }
 
@@ -23,7 +26,8 @@
         }
 
         body {
-            background: #fffef6; /* light cream milk-colored background */
+            background: #fffef6;
+            /* light cream milk-colored background */
             color: #333;
         }
 
@@ -44,6 +48,7 @@
             gap: 15px;
             margin-bottom: 10px;
         }
+
         .logo-placeholder {
             width: 60px;
             height: 60px;
@@ -69,7 +74,8 @@
         .header h1 {
             font-size: 2.6rem;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
-            color: var(--blue); /* darker for highlight */
+            color: var(--blue);
+            /* darker for highlight */
             font-weight: 900;
             max-width: 720px;
         }
@@ -241,7 +247,9 @@
             gap: 8px;
         }
 
-        .add-to-cart:hover { transform: translateY(-2px); }
+        .add-to-cart:hover {
+            transform: translateY(-2px);
+        }
 
         /* CART SECTION */
         .cart-section {
@@ -384,7 +392,10 @@
         }
 
         /* Make admin modal scrollable when content is long */
-        .modal-content { max-height: 80vh; overflow: auto; }
+        .modal-content {
+            max-height: 80vh;
+            overflow: auto;
+        }
 
         /* When admin modal becomes draggable we set absolute positioning via JS */
         .modal-content.draggable {
@@ -392,7 +403,11 @@
             touch-action: none;
             cursor: move;
         }
-        .tab-content { max-height: 60vh; overflow-y: auto; }
+
+        .tab-content {
+            max-height: 60vh;
+            overflow-y: auto;
+        }
 
         @keyframes slideUp {
             from {
@@ -416,10 +431,24 @@
 
         /* Responsive tweaks */
         @media (max-width: 420px) {
-            .product-image { height: 110px; }
-            .header h1 { font-size: 1.6rem; }
-            .logo-img { width: 64px; height: 64px; }
-            .admin-button { padding: 8px 12px; top: 12px; right: 12px; }
+            .product-image {
+                height: 110px;
+            }
+
+            .header h1 {
+                font-size: 1.6rem;
+            }
+
+            .logo-img {
+                width: 64px;
+                height: 64px;
+            }
+
+            .admin-button {
+                padding: 8px 12px;
+                top: 12px;
+                right: 12px;
+            }
         }
 
         .close-modal {
@@ -556,14 +585,16 @@
     <header class="header">
         <div class="shop-title">
             <div style="position:relative; display:flex; align-items:center; justify-content:center;">
-                <img src="/images/Logo.jpg" class="logo-img" id="siteLogo" onerror="this.style.display='none'; document.getElementById('logoFallback').style.display='flex'">
+                <img src="/images/Logo.jpg" class="logo-img" id="siteLogo"
+                    onerror="this.style.display='none'; document.getElementById('logoFallback').style.display='flex'">
                 <div id="logoFallback" class="logo-placeholder" style="display:none">🐄</div>
             </div>
             <h1>Indian Doodh Dairy</h1>
         </div>
         <p class="tagline">शुद्ध देसी डेयरी - गुणवत्ता और शुद्धता की गारंटी</p>
         <div class="contact-bar">
-            📍 किसान बाजार, गोमती नगर, लखनऊ | 📞 7007120750, 9807235659 | ⏰ <span id="storeHours">9:00 AM - 10:00 PM</span>
+            📍 किसान बाजार, गोमती नगर, लखनऊ | 📞 7007120750, 9807235659 | ⏰ <span id="storeHours">9:00 AM - 10:00
+                PM</span>
         </div>
     </header>
 
@@ -642,7 +673,8 @@
             <div class="modal-body" id="orderDetailsBody">
                 <!-- items list populated here -->
             </div>
-            <div style="padding:16px;display:flex;gap:8px;justify-content:flex-end;background:#fafafa;border-top:1px solid #eee">
+            <div
+                style="padding:16px;display:flex;gap:8px;justify-content:flex-end;background:#fafafa;border-top:1px solid #eee">
                 <button class="update-btn" onclick="sendWhatsAppForCurrentOrder()">Send WhatsApp</button>
                 <button onclick="closeOrderDetails()">Close</button>
             </div>
@@ -670,15 +702,15 @@
                 <table class="admin-table">
                     <thead>
                         <tr>
-                                    <th>ऑर्डर ID</th>
-                                    <th>ग्राहक</th>
-                                    <th>फोन</th>
-                                    <th>खरीदी गई आइटम्स</th>
-                                    <th>राशि</th>
-                                    <th>स्थिति</th>
-                                    <th>Payment</th>
-                                    <th>तिथि</th>
-                                                    <th>कार्रवाई</th>
+                            <th>ऑर्डर ID</th>
+                            <th>ग्राहक</th>
+                            <th>फोन</th>
+                            <th>खरीदी गई आइटम्स</th>
+                            <th>राशि</th>
+                            <th>स्थिति</th>
+                            <th>Payment</th>
+                            <th>तिथि</th>
+                            <th>कार्रवाई</th>
                         </tr>
                     </thead>
                     <tbody id="ordersTableBody">
@@ -692,7 +724,8 @@
                 <h3 style="color: var(--green); margin-bottom: 20px;">📦 उत्पाद प्रबंधन</h3>
                 <div style="margin-bottom:12px;display:flex;gap:12px;align-items:center;">
                     <button class="update-btn" onclick="openCreateProductModal()">➕ नया उत्पाद जोड़ें</button>
-                    <div style="margin-left: auto; color:#666; font-size:0.9rem">Tip: आप यहाँ उत्पाद जोड़कर स्थानीय रूप से जांच सकते हैं।</div>
+                    <div style="margin-left: auto; color:#666; font-size:0.9rem">Tip: आप यहाँ उत्पाद जोड़कर स्थानीय रूप
+                        से जांच सकते हैं।</div>
                 </div>
                 <table class="admin-table">
                     <thead>
@@ -709,7 +742,8 @@
                     </tbody>
                 </table>
                 <!-- Create product inline modal -->
-                <div id="createProductModal" style="display:none;margin-top:12px;padding:12px;border:1px dashed #ddd;border-radius:8px;background:#fff;">
+                <div id="createProductModal"
+                    style="display:none;margin-top:12px;padding:12px;border:1px dashed #ddd;border-radius:8px;background:#fff;">
                     <h4>नए उत्पाद का विवरण</h4>
                     <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;">
                         <input id="new_p_id" placeholder="id (eg. p-011)">
@@ -749,7 +783,8 @@
                 <div style="margin-top:18px;padding:20px;background:#fff;border-radius:8px;border:1px solid #eee">
                     <h4 style="margin-bottom:10px">📱 Admin Contact</h4>
                     <div class="form-group">
-                        <input type="tel" id="adminContact" class="form-input" placeholder="Admin WhatsApp numbers (comma separated, e.g. 7007120750,9807235659)">
+                        <input type="tel" id="adminContact" class="form-input"
+                            placeholder="Admin WhatsApp numbers (comma separated, e.g. 7007120750,9807235659)">
                     </div>
                     <div style="display:flex;gap:8px;">
                         <button class="update-btn" onclick="saveAdminContact()">Save Contact</button>
@@ -770,9 +805,12 @@
                 <div style="margin-top:18px;padding:20px;background:#fff;border-radius:8px;border:1px solid #eee">
                     <h4 style="margin-bottom:10px">🖼️ Logo Change</h4>
                     <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
-                        <img id="storeLogoPreview" src="/images/Logo.jpg" alt="Logo" style="width:64px;height:64px;border-radius:50%;object-fit:cover;border:3px solid #fff;box-shadow:0 3px 10px rgba(0,0,0,0.1)">
-                        <input type="file" id="storeLogoFile" accept="image/*" style="display:none" onchange="handleStoreLogoChange(this)">
-                        <button class="update-btn" onclick="document.getElementById('storeLogoFile').click()">Select Logo</button>
+                        <img id="storeLogoPreview" src="/images/Logo.jpg" alt="Logo"
+                            style="width:64px;height:64px;border-radius:50%;object-fit:cover;border:3px solid #fff;box-shadow:0 3px 10px rgba(0,0,0,0.1)">
+                        <input type="file" id="storeLogoFile" accept="image/*" style="display:none"
+                            onchange="handleStoreLogoChange(this)">
+                        <button class="update-btn" onclick="document.getElementById('storeLogoFile').click()">Select
+                            Logo</button>
                     </div>
                 </div>
             </div>
@@ -980,6 +1018,12 @@
             return 'other';
         }
 
+        function isFixedTableProduct(product) {
+            if (!product || !product.name) return false;
+            const name = String(product.name || '').toLowerCase();
+            return name.includes('गुलाब जामुन') || name.includes('चेना') || name.includes('लस्सी');
+        }
+
         function parseBaseGrams(unit) {
             const s = String(unit || '').trim();
             const lower = s.toLowerCase();
@@ -1052,22 +1096,22 @@
         async function loadProducts() {
             const container = document.getElementById('productsContainer');
             container.innerHTML = '';
-            
+
             // Fetch products from API first
             try {
                 const res = await fetch('/api/products');
                 if (res.ok) {
                     const list = await res.json();
                     dairyProducts.length = 0;
-                    list.forEach(p => dairyProducts.push({ 
-                        id: p.id, 
-                        name: p.name, 
-                        price: p.price, 
-                        unit: p.unit, 
-                        emoji: '', 
-                        imageUrl: p.imageUrl, 
-                        description: p.description, 
-                        category: p.category 
+                    list.forEach(p => dairyProducts.push({
+                        id: p.id,
+                        name: p.name,
+                        price: p.price,
+                        unit: p.unit,
+                        emoji: '',
+                        imageUrl: p.imageUrl,
+                        description: p.description,
+                        category: p.category
                     }));
                 }
             } catch (e) {
@@ -1121,56 +1165,116 @@
                     displayUnit = 'kg';
                     packSelectHtml = '';
                     quantityControlsHtml = `
-                        <div class="quantity-controls">
-                            <button class="qty-btn" onclick="changeQuantity('${product.id}', -1)" ${!inStock ? 'disabled' : ''}>-</button>
-                            <input type="number" class="qty-input" id="qty${product.id}" 
-                                   value="${qty > 0 ? qty : ''}" placeholder="0" min="0" step="0.001" onchange="setQuantity('${product.id}', this.value)"
-                                   ${!inStock ? 'disabled' : ''}>
-                            <button class="qty-btn" onclick="changeQuantity('${product.id}', 1)" ${!inStock ? 'disabled' : ''}>+</button>
+                        <div style="display:flex;flex-direction:column;gap:8px;align-items:center">
+                            <div style="font-size:0.85rem;color:#666">मात्रा (kg) / कुल कीमत</div>
+                            <div class="quantity-controls">
+                                <button class="qty-btn" onclick="changeQuantity('${product.id}', -1)" ${!inStock ? 'disabled' : ''}>-</button>
+                                <input type="number" class="qty-input" id="qty${product.id}" 
+                                       value="${qty > 0 ? qty : ''}" placeholder="0" min="0" step="0.001" 
+                                       oninput="onQuantityChange('${product.id}', this.value)"
+                                       onchange="setQuantity('${product.id}', this.value)"
+                                       ${!inStock ? 'disabled' : ''}>
+                                <button class="qty-btn" onclick="changeQuantity('${product.id}', 1)" ${!inStock ? 'disabled' : ''}>+</button>
+                            </div>
+                            <div style="display:flex;align-items:center;gap:4px">
+                                <span style="font-size:0.9rem">₹</span>
+                                <input type="number" class="qty-input" id="priceTotal${product.id}" 
+                                       value="${qty > 0 ? Math.round(qty * displayPrice).toString() : ''}" placeholder="0" min="0" step="1"
+                                       oninput="onPriceTotalChange('${product.id}', this.value)"
+                                       ${!inStock ? 'disabled' : ''}>
+                            </div>
                         </div>
                     `;
                 } else if (kind === 'volume') {
                     displayPrice = price;
                     displayUnit = 'L';
                     quantityControlsHtml = `
-                        <div class="quantity-controls">
-                            <button class="qty-btn" onclick="changeQuantity('${product.id}', -1)" ${!inStock ? 'disabled' : ''}>-</button>
-                            <input type="number" class="qty-input" id="qty${product.id}" 
-                                   value="${qty > 0 ? qty : ''}" placeholder="0" min="0" step="0.001" onchange="setQuantity('${product.id}', this.value)"
-                                   ${!inStock ? 'disabled' : ''}>
-                            <button class="qty-btn" onclick="changeQuantity('${product.id}', 1)" ${!inStock ? 'disabled' : ''}>+</button>
+                        <div style="display:flex;flex-direction:column;gap:8px;align-items:center">
+                            <div style="font-size:0.85rem;color:#666">मात्रा (L) / कुल कीमत</div>
+                            <div class="quantity-controls">
+                                <button class="qty-btn" onclick="changeQuantity('${product.id}', -1)" ${!inStock ? 'disabled' : ''}>-</button>
+                                <input type="number" class="qty-input" id="qty${product.id}" 
+                                       value="${qty > 0 ? qty : ''}" placeholder="0" min="0" step="0.001" 
+                                       oninput="onQuantityChange('${product.id}', this.value)"
+                                       onchange="setQuantity('${product.id}', this.value)"
+                                       ${!inStock ? 'disabled' : ''}>
+                                <button class="qty-btn" onclick="changeQuantity('${product.id}', 1)" ${!inStock ? 'disabled' : ''}>+</button>
+                            </div>
+                            <div style="display:flex;align-items:center;gap:4px">
+                                <span style="font-size:0.9rem">₹</span>
+                                <input type="number" class="qty-input" id="priceTotal${product.id}" 
+                                       value="${qty > 0 ? Math.round(qty * displayPrice).toString() : ''}" placeholder="0" min="0" step="1"
+                                       oninput="onPriceTotalChange('${product.id}', this.value)" onblur="onPriceTotalBlur('${product.id}', this.value)"
+                                       ${!inStock ? 'disabled' : ''}>
+                            </div>
                         </div>
                     `;
                 } else if (kind === 'piece') {
                     displayUnit = 'पीस';
                     quantityControlsHtml = `
-                        <div class="quantity-controls">
-                            <button class="qty-btn" onclick="changeQuantity('${product.id}', -1)" ${!inStock ? 'disabled' : ''}>-</button>
-                            <input type="number" class="qty-input" id="qty${product.id}" 
-                                   value="${qty > 0 ? qty : ''}" placeholder="0" min="0" step="1" onchange="setQuantity('${product.id}', this.value)"
-                                   ${!inStock ? 'disabled' : ''}>
-                            <button class="qty-btn" onclick="changeQuantity('${product.id}', 1)" ${!inStock ? 'disabled' : ''}>+</button>
+                        <div style="display:flex;flex-direction:column;gap:8px;align-items:center">
+                            <div style="font-size:0.85rem;color:#666">मात्रा (पीस) / कुल कीमत</div>
+                            <div class="quantity-controls">
+                                <button class="qty-btn" onclick="changeQuantity('${product.id}', -1)" ${!inStock ? 'disabled' : ''}>-</button>
+                                <input type="number" class="qty-input" id="qty${product.id}" 
+                                       value="${qty > 0 ? qty : ''}" placeholder="0" min="0" step="1" 
+                                       oninput="onQuantityChange('${product.id}', this.value)"
+                                       onchange="setQuantity('${product.id}', this.value)"
+                                       ${!inStock ? 'disabled' : ''}>
+                                <button class="qty-btn" onclick="changeQuantity('${product.id}', 1)" ${!inStock ? 'disabled' : ''}>+</button>
+                            </div>
+                            <div style="display:flex;align-items:center;gap:4px">
+                                <span style="font-size:0.9rem">₹</span>
+                                <input type="number" class="qty-input" id="priceTotal${product.id}" 
+                                       value="${qty > 0 ? Math.round(qty * price).toString() : ''}" placeholder="0" min="0" step="1"
+                                       oninput="onPriceTotalChange('${product.id}', this.value)" onblur="onPriceTotalBlur('${product.id}', this.value)"
+                                       ${!inStock ? 'disabled' : ''}>
+                            </div>
                         </div>
                     `;
                 } else if (kind === 'glass') {
                     displayUnit = 'ग्लास';
                     quantityControlsHtml = `
-                        <div class="quantity-controls">
-                            <button class="qty-btn" onclick="changeQuantity('${product.id}', -1)" ${!inStock ? 'disabled' : ''}>-</button>
-                            <input type="number" class="qty-input" id="qty${product.id}" 
-                                   value="${qty > 0 ? qty : ''}" placeholder="0" min="0" step="1" onchange="setQuantity('${product.id}', this.value)"
-                                   ${!inStock ? 'disabled' : ''}>
-                            <button class="qty-btn" onclick="changeQuantity('${product.id}', 1)" ${!inStock ? 'disabled' : ''}>+</button>
+                        <div style="display:flex;flex-direction:column;gap:8px;align-items:center">
+                            <div style="font-size:0.85rem;color:#666">मात्रा (ग्लास) / कुल कीमत</div>
+                            <div class="quantity-controls">
+                                <button class="qty-btn" onclick="changeQuantity('${product.id}', -1)" ${!inStock ? 'disabled' : ''}>-</button>
+                                <input type="number" class="qty-input" id="qty${product.id}" 
+                                       value="${qty > 0 ? qty : ''}" placeholder="0" min="0" step="1" 
+                                       oninput="onQuantityChange('${product.id}', this.value)"
+                                       onchange="setQuantity('${product.id}', this.value)"
+                                       ${!inStock ? 'disabled' : ''}>
+                                <button class="qty-btn" onclick="changeQuantity('${product.id}', 1)" ${!inStock ? 'disabled' : ''}>+</button>
+                            </div>
+                            <div style="display:flex;align-items:center;gap:4px">
+                                <span style="font-size:0.9rem">₹</span>
+                                <input type="number" class="qty-input" id="priceTotal${product.id}" 
+                                       value="${qty > 0 ? Math.round(qty * price).toString() : ''}" placeholder="0" min="0" step="1"
+                                       oninput="onPriceTotalChange('${product.id}', this.value)" onblur="onPriceTotalBlur('${product.id}', this.value)"
+                                       ${!inStock ? 'disabled' : ''}>
+                            </div>
                         </div>
                     `;
                 } else {
                     quantityControlsHtml = `
-                        <div class="quantity-controls">
-                            <button class="qty-btn" onclick="changeQuantity('${product.id}', -1)" ${!inStock ? 'disabled' : ''}>-</button>
-                            <input type="number" class="qty-input" id="qty${product.id}" 
-                                   value="${qty > 0 ? qty : ''}" placeholder="0" min="0" onchange="setQuantity('${product.id}', this.value)"
-                                   ${!inStock ? 'disabled' : ''}>
-                            <button class="qty-btn" onclick="changeQuantity('${product.id}', 1)" ${!inStock ? 'disabled' : ''}>+</button>
+                        <div style="display:flex;flex-direction:column;gap:8px;align-items:center">
+                            <div style="font-size:0.85rem;color:#666">मात्रा / कुल कीमत</div>
+                            <div class="quantity-controls">
+                                <button class="qty-btn" onclick="changeQuantity('${product.id}', -1)" ${!inStock ? 'disabled' : ''}>-</button>
+                                <input type="number" class="qty-input" id="qty${product.id}" 
+                                       value="${qty > 0 ? qty : ''}" placeholder="0" min="0" 
+                                       oninput="onQuantityChange('${product.id}', this.value)"
+                                       onchange="setQuantity('${product.id}', this.value)"
+                                       ${!inStock ? 'disabled' : ''}>
+                                <button class="qty-btn" onclick="changeQuantity('${product.id}', 1)" ${!inStock ? 'disabled' : ''}>+</button>
+                            </div>
+                            <div style="display:flex;align-items:center;gap:4px">
+                                <span style="font-size:0.9rem">₹</span>
+                                <input type="number" class="qty-input" id="priceTotal${product.id}" 
+                                       value="${qty > 0 ? Math.round(qty * price).toString() : ''}" placeholder="0" min="0" step="1"
+                                       oninput="onPriceTotalChange('${product.id}', this.value)" onblur="onPriceTotalBlur('${product.id}', this.value)"
+                                       ${!inStock ? 'disabled' : ''}>
+                            </div>
                         </div>
                     `;
                 }
@@ -1182,7 +1286,7 @@
                 const productHTML = `
                     <div class="product-card">
                         <div class="product-image">
-                            ${isImage ? `<img src="${imgSrc}" alt="${product.name}">` : `<div class="product-emoji">${product.emoji||'🐄'}</div>`}
+                            ${isImage ? `<img src="${imgSrc}" alt="${product.name}">` : `<div class="product-emoji">${product.emoji || '🐄'}</div>`}
                         </div>
                         <div class="product-info">
                             <div class="product-name">${product.name}</div>
@@ -1203,6 +1307,105 @@
         }
 
         // ==================== CART FUNCTIONS ====================
+        function onQuantityChange(productId, value) {
+            const product = dairyProducts.find(p => p.id === productId);
+            const settings = productSettings[productId] || {};
+            const baseUnit = (settings.unit || (product ? product.unit : '')) || '';
+            const kind = getUnitKind(baseUnit);
+            const isFixed = isFixedTableProduct(product);
+            const pricePerUnit = (() => {
+                if (kind === 'weight') {
+                    return computePerKgPrice(settings.price || product.price, baseUnit);
+                }
+                return settings.price || product.price;
+            })();
+            const qtyEl = document.getElementById(`qty${productId}`);
+            let qty = parseFloat(value);
+            if ((isFixed || kind === 'piece' || kind === 'glass') && !isNaN(qty)) {
+                qty = Math.max(1, Math.round(qty));
+                if (qtyEl) qtyEl.value = qty.toString();
+            }
+            const priceTotalEl = document.getElementById(`priceTotal${productId}`);
+            if (priceTotalEl) {
+                if (!value || value === '' || isNaN(qty) || qty <= 0) {
+                    priceTotalEl.value = '';
+                } else {
+                    priceTotalEl.value = Math.round(qty * pricePerUnit).toString();
+                }
+            }
+        }
+
+        function onPriceTotalChange(productId, value) {
+            const product = dairyProducts.find(p => p.id === productId);
+            const settings = productSettings[productId] || {};
+            const baseUnit = (settings.unit || (product ? product.unit : '')) || '';
+            const kind = getUnitKind(baseUnit);
+            const isFixed = isFixedTableProduct(product);
+            const pricePerUnit = (() => {
+                if (kind === 'weight') {
+                    return computePerKgPrice(settings.price || product.price, baseUnit);
+                }
+                return settings.price || product.price;
+            })();
+            const qtyEl = document.getElementById(`qty${productId}`);
+            if (!qtyEl || pricePerUnit <= 0) return;
+            const raw = value == null ? '' : value.toString().trim();
+            if (raw === '' || isNaN(parseFloat(raw)) || parseFloat(raw) <= 0) {
+                qtyEl.value = '';
+                return;
+            }
+            const priceTotal = parseFloat(raw);
+            let qty = priceTotal / pricePerUnit;
+            if (isFixed || kind === 'piece' || kind === 'glass') {
+                const roundedQty = Math.round(qty);
+                if (Math.abs(qty - roundedQty) < 1e-9 && roundedQty >= 1) {
+                    qtyEl.value = String(roundedQty);
+                } else {
+                    qtyEl.value = '';
+                }
+            } else {
+                qtyEl.value = (Math.round(qty * 1000) / 1000).toString();
+            }
+        }
+
+        function onPriceTotalBlur(productId, value) {
+            const product = dairyProducts.find(p => p.id === productId);
+            const settings = productSettings[productId] || {};
+            const baseUnit = (settings.unit || (product ? product.unit : '')) || '';
+            const kind = getUnitKind(baseUnit);
+            const isFixed = isFixedTableProduct(product);
+            const pricePerUnit = (() => {
+                if (kind === 'weight') {
+                    return computePerKgPrice(settings.price || product.price, baseUnit);
+                }
+                return settings.price || product.price;
+            })();
+            const qtyEl = document.getElementById(`qty${productId}`);
+            const priceTotalEl = document.getElementById(`priceTotal${productId}`);
+            if (!qtyEl || !priceTotalEl || pricePerUnit <= 0) return;
+            const raw = value == null ? '' : value.toString().trim();
+            if (raw === '' || isNaN(parseFloat(raw)) || parseFloat(raw) <= 0) {
+                qtyEl.value = '';
+                priceTotalEl.value = '';
+                return;
+            }
+            const priceTotal = parseFloat(raw);
+            let qty = priceTotal / pricePerUnit;
+            if (isFixed || kind === 'piece' || kind === 'glass') {
+                const roundedQty = Math.round(qty);
+                if (Math.abs(qty - roundedQty) < 1e-9 && roundedQty >= 1) {
+                    qtyEl.value = String(roundedQty);
+                    priceTotalEl.value = String(Math.round(roundedQty * pricePerUnit));
+                } else {
+                    qtyEl.value = '';
+                    priceTotalEl.value = '';
+                }
+            } else {
+                qtyEl.value = (Math.round(qty * 1000) / 1000).toString();
+                priceTotalEl.value = Math.round(qty * pricePerUnit).toString();
+            }
+        }
+
         function changeQuantity(productId, change) {
             const el = document.getElementById(`qty${productId}`);
             if (!el) return;
@@ -1225,6 +1428,7 @@
             if (newQty < 0) newQty = 0;
             if (newQty === 0) el.value = '';
             else el.value = isFloat ? String(Math.round(newQty * 1000) / 1000) : String(newQty);
+            onQuantityChange(productId, el.value);
             updateCartItem(productId, newQty);
         }
 
@@ -1235,6 +1439,7 @@
             const kind = getUnitKind(baseUnit);
             quantity = (kind === 'weight' || kind === 'volume') ? (parseFloat(quantity) || 0) : (parseInt(quantity, 10) || 0);
             if (quantity < 0) quantity = 0;
+            onQuantityChange(productId, quantity.toString());
             updateCartItem(productId, quantity);
         }
 
@@ -1332,7 +1537,7 @@
             let html = '';
             let total = 0;
 
-            function formatQtyValue(v){
+            function formatQtyValue(v) {
                 const n = Number(v);
                 if (!isFinite(n)) return '0';
                 const s = n.toFixed(3);
@@ -1427,7 +1632,7 @@
 
                 // Show success message and details to customer
                 showNotification('✅ ऑर्डर सफलतापूर्वक दिया गया!', 'success');
-                const orderMessage = `\n                धन्यवाद ${name}!\n                \n                📦 ऑर्डर ID: ${orders[orders.length-1].orderId || orders[orders.length-1].id}\n                💰 कुल राशि: ₹${order.totalAmount}\n                📍 डिलीवरी: ${address.substring(0, 50)}...\n                📞 हम जल्द ही आपसे संपर्क करेंगे!\n                \n                आपका ऑर्डर नंबर: ${orders.length}`;
+                const orderMessage = `\n                धन्यवाद ${name}!\n                \n                📦 ऑर्डर ID: ${orders[orders.length - 1].orderId || orders[orders.length - 1].id}\n                💰 कुल राशि: ₹${order.totalAmount}\n                📍 डिलीवरी: ${address.substring(0, 50)}...\n                📞 हम जल्द ही आपसे संपर्क करेंगे!\n                \n                आपका ऑर्डर नंबर: ${orders.length}`;
                 alert(orderMessage);
 
                 // Clear form and cart
@@ -1456,7 +1661,7 @@
             try {
                 const numbers = getAdminNumbers();
                 const orderId = order.orderId || order.id || '';
-                const itemsText = (order.items || []).map(i => `• ${i.name} - ${i.quantity} ${i.unit} (₹${i.total || (i.price*i.quantity)})`).join('%0A');
+                const itemsText = (order.items || []).map(i => `• ${i.name} - ${i.quantity} ${i.unit} (₹${i.total || (i.price * i.quantity)})`).join('%0A');
                 const msg = encodeURIComponent(`🚨 नया ऑर्डर!%0Aऑर्डर ID: ${orderId}%0Aग्राहक: ${order.customerName}%0Aफोन: ${order.customerPhone}%0Aकुल: ₹${order.totalAmount}%0Aआइटम्स:%0A${itemsText}%0Aपता: ${order.customerAddress}`);
                 console.log('📱 Notifying admin numbers:', numbers);
                 numbers.forEach(num => {
@@ -1469,7 +1674,7 @@
         }
 
         // ==================== ADMIN FUNCTIONS ====================
-        function getAuthHeaders(){
+        function getAuthHeaders() {
             const token = localStorage.getItem('dairy_admin_jwt');
             return token ? { 'Authorization': 'Bearer ' + token } : {};
         }
@@ -1506,12 +1711,12 @@
         async function loginAdmin() {
             const password = document.getElementById('adminPassword').value;
             const payload = { username: 'admin', password };
-            try{
-                const res = await fetch('/api/auth/login', { method: 'POST', headers: { 'Content-Type':'application/json' }, body: JSON.stringify(payload) });
-                if (res.ok){
+            try {
+                const res = await fetch('/api/auth/login', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+                if (res.ok) {
                     const body = await res.json();
                     const token = body.token;
-                    if (token){
+                    if (token) {
                         localStorage.setItem('dairy_admin_jwt', token);
                         closeLogin();
                         // open admin fullscreen
@@ -1543,7 +1748,7 @@
                     showNotification('❌ Login failed', 'error');
                     return;
                 }
-            }catch(e){
+            } catch (e) {
                 // fallback to local password check
                 if (password === adminPassword) {
                     localStorage.setItem('dairy_admin_jwt', 'local-fallback');
@@ -1568,7 +1773,7 @@
             disableAdminDragging();
         }
 
-        function logoutAdmin(){
+        function logoutAdmin() {
             localStorage.removeItem('dairy_admin_jwt');
             document.getElementById('adminModal').style.display = 'none';
             disableAdminDragging();
@@ -1590,19 +1795,19 @@
 
         // Draggable admin modal implementation (pointer events, works for mouse & touch)
         let _adminDrag = { on: false, startX: 0, startY: 0, origX: 0, origY: 0, el: null };
-        function enableAdminDragging(){
+        function enableAdminDragging() {
             const modal = document.getElementById('adminModal');
-            if(!modal) return;
+            if (!modal) return;
             const content = modal.querySelector('.modal-content');
-            if(!content) return;
+            if (!content) return;
             content.classList.add('draggable');
             // center if not positioned yet
-            if(!content.style.left) {
-                content.style.left = (window.innerWidth - content.offsetWidth)/2 + 'px';
-                content.style.top = Math.max(40, (window.innerHeight - content.offsetHeight)/6) + 'px';
+            if (!content.style.left) {
+                content.style.left = (window.innerWidth - content.offsetWidth) / 2 + 'px';
+                content.style.top = Math.max(40, (window.innerHeight - content.offsetHeight) / 6) + 'px';
             }
             const header = content.querySelector('.modal-header');
-            if(!header) return;
+            if (!header) return;
 
             header.style.touchAction = 'none';
 
@@ -1611,42 +1816,42 @@
             window.addEventListener('pointerup', _onPointerUp);
             _adminDrag.el = content;
         }
-        function disableAdminDragging(){
+        function disableAdminDragging() {
             const modal = document.getElementById('adminModal');
-            if(!modal) return;
+            if (!modal) return;
             const content = modal.querySelector('.modal-content');
-            if(!content) return;
+            if (!content) return;
             content.classList.remove('draggable');
             const header = content.querySelector('.modal-header');
-            if(header){ header.removeEventListener('pointerdown', _onPointerDown); }
+            if (header) { header.removeEventListener('pointerdown', _onPointerDown); }
             window.removeEventListener('pointermove', _onPointerMove);
             window.removeEventListener('pointerup', _onPointerUp);
             _adminDrag = { on: false, startX: 0, startY: 0, origX: 0, origY: 0, el: null };
         }
 
-        function _onPointerDown(e){
-            if(!e.isPrimary) return;
+        function _onPointerDown(e) {
+            if (!e.isPrimary) return;
             const el = _adminDrag.el;
-            if(!el) return;
+            if (!el) return;
             _adminDrag.on = true;
             _adminDrag.startX = e.clientX;
             _adminDrag.startY = e.clientY;
             _adminDrag.origX = parseFloat(el.style.left || 0);
             _adminDrag.origY = parseFloat(el.style.top || 0);
-            try { e.target.setPointerCapture(e.pointerId); } catch(_){}
+            try { e.target.setPointerCapture(e.pointerId); } catch (_) { }
         }
-        function _onPointerMove(e){
-            if(!_adminDrag.on) return;
+        function _onPointerMove(e) {
+            if (!_adminDrag.on) return;
             const el = _adminDrag.el;
             const dx = e.clientX - _adminDrag.startX;
             const dy = e.clientY - _adminDrag.startY;
             el.style.left = (_adminDrag.origX + dx) + 'px';
             el.style.top = Math.max(8, _adminDrag.origY + dy) + 'px';
         }
-        function _onPointerUp(e){
-            if(!_adminDrag.on) return;
+        function _onPointerUp(e) {
+            if (!_adminDrag.on) return;
             _adminDrag.on = false;
-            try { e.target.releasePointerCapture && e.target.releasePointerCapture(e.pointerId); } catch(_){}
+            try { e.target.releasePointerCapture && e.target.releasePointerCapture(e.pointerId); } catch (_) { }
         }
 
         function showTab(tabName, ev) {
@@ -1676,7 +1881,7 @@
             else if (tabName === 'products') loadProductsTable();
         }
 
-        function getOrderStatusOptions(){
+        function getOrderStatusOptions() {
             return [
                 { value: 'received', label: 'नया ऑर्डर' },
                 { value: 'accepted', label: 'Accepted' },
@@ -1687,14 +1892,14 @@
             ];
         }
 
-        function getPaymentOptions(){
+        function getPaymentOptions() {
             return [
                 { value: 'unpaid', label: 'Unpaid' },
                 { value: 'paid', label: 'Paid' }
             ];
         }
 
-        function normalizeOrderStatus(status){
+        function normalizeOrderStatus(status) {
             const s = String(status || '').trim();
             if (s === 'नया ऑर्डर') return 'received';
             if (s === 'तैयार हो रहा') return 'preparing';
@@ -1703,30 +1908,30 @@
             return s || 'received';
         }
 
-        function normalizePaymentStatus(status){
+        function normalizePaymentStatus(status) {
             const s = String(status || '').trim().toLowerCase();
             if (s === 'paid' || s === 'unpaid') return s;
             return 'unpaid';
         }
 
-        async function refreshOrdersFromBackend(){
+        async function refreshOrdersFromBackend() {
             const headers = getAuthHeaders();
             const token = localStorage.getItem('dairy_admin_jwt') || '';
             if (!headers.Authorization || token === 'local-fallback') return null;
-            try{
+            try {
                 const res = await fetch('/api/orders', { headers });
                 if (!res.ok) return null;
                 const list = await res.json();
                 orders = Array.isArray(list) ? list : [];
                 localStorage.setItem('dairy_orders', JSON.stringify(orders));
                 return orders;
-            }catch(e){
+            } catch (e) {
                 return null;
             }
         }
 
-        async function updateOrderOnBackend(orderId, patch){
-            const headers = Object.assign({ 'Content-Type':'application/json' }, getAuthHeaders());
+        async function updateOrderOnBackend(orderId, patch) {
+            const headers = Object.assign({ 'Content-Type': 'application/json' }, getAuthHeaders());
             const token = localStorage.getItem('dairy_admin_jwt') || '';
             if (!headers.Authorization || token === 'local-fallback') return null;
             const res = await fetch('/api/orders/' + encodeURIComponent(orderId), { method: 'PUT', headers, body: JSON.stringify(patch || {}) });
@@ -1842,7 +2047,7 @@
             if (__currentOrderIdForModal && String(__currentOrderIdForModal) === String(orderId)) renderOrderDetails(orderId);
         }
 
-        async function updatePaymentStatus(orderId, status){
+        async function updatePaymentStatus(orderId, status) {
             const normalized = normalizePaymentStatus(status);
             const idx = (orders || []).findIndex(o => String(o.orderId || o.id || '') === String(orderId));
             if (idx !== -1) {
@@ -1860,10 +2065,10 @@
             if (__currentOrderIdForModal && String(__currentOrderIdForModal) === String(orderId)) renderOrderDetails(orderId);
         }
 
-        function setOrderQuick(orderId, status){
+        function setOrderQuick(orderId, status) {
             updateOrderStatus(orderId, status);
         }
-        function setPaidQuick(orderId){
+        function setPaidQuick(orderId) {
             updatePaymentStatus(orderId, 'paid');
         }
 
@@ -1916,26 +2121,26 @@
             showNotification(`✅ ${product.name} अपडेट किया गया!`, 'success');
 
             // Try to persist change to backend via PUT (requires auth)
-            (async ()=>{
-                try{
-                    const headers = Object.assign({ 'Content-Type':'application/json' }, getAuthHeaders());
+            (async () => {
+                try {
+                    const headers = Object.assign({ 'Content-Type': 'application/json' }, getAuthHeaders());
                     const patch = { price: productSettings[productId].price, inStock: productSettings[productId].stock, imageUrl: productSettings[productId].imageUrl, unit: productSettings[productId].unit };
-                    const res = await fetch('/api/products/'+encodeURIComponent(productId), { method: 'PUT', headers, body: JSON.stringify(patch) });
-                    if(!res.ok) console.warn('Backend update responded', res.status);
-                }catch(e){ console.warn('Backend update failed', e); }
+                    const res = await fetch('/api/products/' + encodeURIComponent(productId), { method: 'PUT', headers, body: JSON.stringify(patch) });
+                    if (!res.ok) console.warn('Backend update responded', res.status);
+                } catch (e) { console.warn('Backend update failed', e); }
             })();
         }
 
         // Admin: create product from modal (local-only, and will attempt backend POST if available)
-        function openCreateProductModal(){
+        function openCreateProductModal() {
             document.getElementById('createProductModal').style.display = 'block';
             document.getElementById('new_p_id').value = `p-${Date.now()}`;
         }
-        function closeCreateProductModal(){
+        function closeCreateProductModal() {
             document.getElementById('createProductModal').style.display = 'none';
         }
 
-        async function createProductFromAdminModal(){
+        async function createProductFromAdminModal() {
             const id = document.getElementById('new_p_id').value.trim();
             const name = document.getElementById('new_p_name').value.trim();
             const category = document.getElementById('new_p_category').value.trim() || 'dairy';
@@ -1944,7 +2149,7 @@
             const imageUrl = document.getElementById('new_p_image').value.trim() || '';
             const desc = document.getElementById('new_p_desc').value.trim() || '';
 
-            if(!id || !name || price <= 0){ showNotification('कृपया valid id, नाम और कीमत दें', 'error'); return; }
+            if (!id || !name || price <= 0) { showNotification('कृपया valid id, नाम और कीमत दें', 'error'); return; }
 
             const product = { id: id, name, price, unit, imageUrl, description: desc, category };
 
@@ -1958,65 +2163,65 @@
             loadProducts();
 
             // Try to POST to backend /api/products (requires admin JWT). If fails, ignore but keep local item.
-            try{
-                const headers = Object.assign({ 'Content-Type':'application/json' }, getAuthHeaders());
-                const res = await fetch('/api/products',{ method: 'POST', headers, body: JSON.stringify({ name, category, price, mrp: price, unit, imageUrl, description: desc, inStock: true }) });
+            try {
+                const headers = Object.assign({ 'Content-Type': 'application/json' }, getAuthHeaders());
+                const res = await fetch('/api/products', { method: 'POST', headers, body: JSON.stringify({ name, category, price, mrp: price, unit, imageUrl, description: desc, inStock: true }) });
                 if (res.ok) console.log('Posted new product to backend');
                 else console.warn('Backend create responded', res.status);
-            }catch(e){ console.warn('Backend create failed (ok to ignore in dev)'); }
+            } catch (e) { console.warn('Backend create failed (ok to ignore in dev)'); }
         }
 
         // Admin: delete product (local + attempt backend delete)
-        async function deleteProduct(productId){
-            if(!confirm('क्या आप वाकई इस उत्पाद को हटाना चाहते हैं?')) return;
+        async function deleteProduct(productId) {
+            if (!confirm('क्या आप वाकई इस उत्पाद को हटाना चाहते हैं?')) return;
             // Remove from dairyProducts
-            const idx = dairyProducts.findIndex(p=>p.id===productId);
-            if(idx!==-1) dairyProducts.splice(idx,1);
+            const idx = dairyProducts.findIndex(p => p.id === productId);
+            if (idx !== -1) dairyProducts.splice(idx, 1);
             // Remove settings
-            if(productSettings && productSettings[productId]) delete productSettings[productId];
+            if (productSettings && productSettings[productId]) delete productSettings[productId];
             localStorage.setItem('dairy_product_settings', JSON.stringify(productSettings));
             showNotification('✅ उत्पाद local से हटा दिया गया', 'success');
             loadProductsTable(); loadProducts();
             // Attempt backend delete (may require auth) - ignore failures
-            try{
+            try {
                 const headers = getAuthHeaders();
-                const res = await fetch('/api/products/'+encodeURIComponent(productId),{ method: 'DELETE', headers });
+                const res = await fetch('/api/products/' + encodeURIComponent(productId), { method: 'DELETE', headers });
                 if (res.ok) console.log('Backend delete ok'); else console.warn('Backend delete responded', res.status);
-            }catch(e){ console.warn('Backend delete failed (may require auth)'); }
+            } catch (e) { console.warn('Backend delete failed (may require auth)'); }
         }
 
         // Admin: change image via file selection (stores data URL in productSettings.imageUrl)
-        function openChangeImage(productId){
+        function openChangeImage(productId) {
             const input = document.createElement('input');
             input.type = 'file';
             input.accept = 'image/*';
-            input.onchange = async (e)=>{
+            input.onchange = async (e) => {
                 const file = e.target.files[0];
-                if(!file) return;
+                if (!file) return;
                 // try server upload
-                try{
+                try {
                     const fd = new FormData();
                     fd.append('image', file);
                     const headers = getAuthHeaders();
                     const res = await fetch('/api/upload', { method: 'POST', headers, body: fd });
-                    if (res.ok){
+                    if (res.ok) {
                         const body = await res.json();
                         const imageUrl = body.imageUrl;
-                        if(!productSettings[productId]) productSettings[productId] = { price:0, unit:'1 kg', stock:true, visible:true };
+                        if (!productSettings[productId]) productSettings[productId] = { price: 0, unit: '1 kg', stock: true, visible: true };
                         productSettings[productId].imageUrl = imageUrl;
                         localStorage.setItem('dairy_product_settings', JSON.stringify(productSettings));
                         showNotification('✅ Image uploaded and set for product', 'success');
                         loadProducts(); loadProductsTable();
                         // try persist to backend product record
-                        try{ await fetch('/api/products/'+encodeURIComponent(productId), { method: 'PUT', headers: Object.assign({ 'Content-Type':'application/json' }, getAuthHeaders()), body: JSON.stringify({ imageUrl }) }); }catch(e){}
+                        try { await fetch('/api/products/' + encodeURIComponent(productId), { method: 'PUT', headers: Object.assign({ 'Content-Type': 'application/json' }, getAuthHeaders()), body: JSON.stringify({ imageUrl }) }); } catch (e) { }
                         return;
                     }
-                }catch(e){ console.warn('Upload failed, falling back to local dataURL'); }
+                } catch (e) { console.warn('Upload failed, falling back to local dataURL'); }
                 // fallback: store local data URL
                 const reader = new FileReader();
-                reader.onload = function(ev){
+                reader.onload = function (ev) {
                     const dataUrl = ev.target.result;
-                    if(!productSettings[productId]) productSettings[productId] = { price:0, unit:'1 kg', stock:true, visible:true };
+                    if (!productSettings[productId]) productSettings[productId] = { price: 0, unit: '1 kg', stock: true, visible: true };
                     productSettings[productId].imageUrl = dataUrl;
                     localStorage.setItem('dairy_product_settings', JSON.stringify(productSettings));
                     showNotification('✅ Image set locally for product', 'success');
@@ -2058,13 +2263,13 @@
         }
 
         // Admin contact persistence
-        function saveAdminContact(){
+        function saveAdminContact() {
             const v = document.getElementById('adminContact').value.trim();
-            if(!v) { showNotification('Enter contact number(s)', 'error'); return; }
+            if (!v) { showNotification('Enter contact number(s)', 'error'); return; }
             localStorage.setItem('dairy_admin_contact', v);
             showNotification('✅ Admin contact saved', 'success');
         }
-        function populateAdminContact(){
+        function populateAdminContact() {
             const v = localStorage.getItem('dairy_admin_contact');
             document.getElementById('adminContact').value = v || '7007120750,9807235659';
             showNotification('✅ Admin contact loaded', 'success');
@@ -2072,9 +2277,9 @@
 
         // Order details modal
         let __currentOrderIdForModal = null;
-        function renderOrderDetails(orderId){
+        function renderOrderDetails(orderId) {
             const order = (orders || []).find(o => String(o.orderId || o.id || '') === String(orderId));
-            if(!order) return false;
+            if (!order) return false;
 
             document.getElementById('orderDetailsTitle').textContent = `Order ${orderId} — ${order.customerName || ''}`;
             const body = document.getElementById('orderDetailsBody');
@@ -2115,7 +2320,7 @@
 
             html += '<ul style="margin-left:18px">';
             (order.items || []).forEach(it => {
-                html += `<li style="margin:6px 0"><strong>${it.name}</strong> — ${it.quantity || 1} × ₹${it.price} = <strong>₹${(it.price*(it.quantity||1)).toFixed(2)}</strong></li>`;
+                html += `<li style="margin:6px 0"><strong>${it.name}</strong> — ${it.quantity || 1} × ₹${it.price} = <strong>₹${(it.price * (it.quantity || 1)).toFixed(2)}</strong></li>`;
             });
             html += '</ul>';
             html += `<div style="margin-top:12px;font-weight:800;color:var(--green)">Total: ₹${order.totalAmount || 0}</div>`;
@@ -2123,23 +2328,23 @@
             return true;
         }
 
-        function openOrderDetails(orderId){
+        function openOrderDetails(orderId) {
             __currentOrderIdForModal = orderId;
             const ok = renderOrderDetails(orderId);
-            if(!ok) return showNotification('Order not found','error');
+            if (!ok) return showNotification('Order not found', 'error');
             document.getElementById('orderDetailsModal').style.display = 'flex';
         }
-        function closeOrderDetails(){ document.getElementById('orderDetailsModal').style.display = 'none'; __currentOrderIdForModal = null; }
+        function closeOrderDetails() { document.getElementById('orderDetailsModal').style.display = 'none'; __currentOrderIdForModal = null; }
 
-        function sendWhatsAppForCurrentOrder(){
-            if(!__currentOrderIdForModal) return showNotification('No order selected','error');
-            const ord = orders.find(o => (o.orderId||o.id||'') === __currentOrderIdForModal);
-            if(!ord) return showNotification('Order not found','error');
+        function sendWhatsAppForCurrentOrder() {
+            if (!__currentOrderIdForModal) return showNotification('No order selected', 'error');
+            const ord = orders.find(o => (o.orderId || o.id || '') === __currentOrderIdForModal);
+            if (!ord) return showNotification('Order not found', 'error');
             const numbers = getAdminNumbers();
-            if(!numbers || numbers.length === 0) return showNotification('Admin contact not set in Settings','error');
-            const items = (ord.items || []).map(i => `${i.name} x${i.quantity||1}`).join('%0A');
+            if (!numbers || numbers.length === 0) return showNotification('Admin contact not set in Settings', 'error');
+            const items = (ord.items || []).map(i => `${i.name} x${i.quantity || 1}`).join('%0A');
             const msg = encodeURIComponent(`नया ऑर्डर: ${__currentOrderIdForModal}%0ACustomer: ${ord.customerName || ''}%0APhone: ${ord.customerPhone || ''}%0AItems:%0A${items}%0ATotal: ₹${ord.totalAmount || 0}`);
-            numbers.forEach(n => { try { window.open(`https://wa.me/${n}?text=${msg}`, '_blank'); } catch(_){} });
+            numbers.forEach(n => { try { window.open(`https://wa.me/${n}?text=${msg}`, '_blank'); } catch (_) { } });
             showNotification('Opening WhatsApp for admins...', 'success');
         }
 
