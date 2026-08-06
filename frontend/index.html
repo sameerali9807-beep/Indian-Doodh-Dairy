@@ -1,4 +1,4 @@
-ï»¿<!DOCTYPE html>
+ÿþï»¿<!DOCTYPE html>
 <html lang="hi">
 
 <head>
@@ -141,7 +141,7 @@
 
         .product-image {
             height: 160px;
-            background: linear-gradient(90deg, var(--saffron) 0%, var(--saffron) 30%, var(--white) 30%, var(--white) 70%, var(--green) 70%, var(--green) 100%);
+            background: linear-gradient(90deg, var(--saffron0%, var(--saffron) 30%, var(--white) 30%, var(--white) 70%, var(--green) 70%, var(--green) 100%);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -156,7 +156,7 @@
             display: block;
             width: 100%;
             height: 100%;
-            filter: saturate(1.05) contrast(1.02);
+            filter: saturate(1.05contrast(1.02);
         }
 
         .product-info {
@@ -764,7 +764,7 @@
         <p>ï¿½ 2023 Indian Doodh Dairy. ??? ?????? ?????????</p>
         <p>??????? ????? ?????, ?????? ???????? ????? ?????</p>
         <p style="margin-top: 10px; font-size: 0.9rem; opacity: 0.8;">
-            ?? ???????? ??? ??????? (5 ???? ?? ????) | ?? Cash on Delivery Available
+            ?? ???????? ??? ??????? (5 ???? ?? ????| ?? Cash on Delivery Available
         </p>
     </footer>
 
@@ -801,7 +801,7 @@
         let productSettings = {};
 
         // ==================== INITIALIZE WEBSITE ====================
-        function initWebsite() {
+        function initWebsite({
             console.log("?? Indian Doodh Dairy Starting...");
 
             // Load from localStorage
@@ -825,7 +825,7 @@
         function loadDataFromStorage() {
             // Load cart
             const savedCart = localStorage.getItem('dairy_cart');
-            if (savedCart) {
+            if (savedCart{
                 try {
                     cart = JSON.parse(savedCart);
                 } catch (e) {
@@ -835,7 +835,7 @@
 
             // Load orders
             const savedOrders = localStorage.getItem('dairy_orders');
-            if (savedOrders) {
+            if (savedOrders{
                 try {
                     orders = JSON.parse(savedOrders);
                 } catch (e) {
@@ -845,10 +845,10 @@
 
             // Load product settings
             const savedSettings = localStorage.getItem('dairy_product_settings');
-            if (savedSettings) {
+            if (savedSettings{
                 try {
                     productSettings = JSON.parse(savedSettings);
-                } catch (e) {
+                } catch (e{
                     // Initialize default settings
                     initializeProductSettings();
                 }
@@ -879,7 +879,7 @@
         }
 
         // ==================== PRODUCT DISPLAY ====================
-        async function loadProducts() {
+        async function loadProducts({
             const container = document.getElementById('productsContainer');
             container.innerHTML = '';
             
@@ -941,7 +941,7 @@
                 const unit = settings.unit || product.unit;
 
                 // prefer admin-set image in settings, then product.imageUrl, then inline image/data or emoji
-                const settingsImg = (productSettings[product.id] && productSettings[product.id].imageUrl) || '';
+                const settingsImg = (productSettings[product.id] && productSettings[product.id].imageUrl|| '';
                 const imgSrc = settingsImg || product.imageUrl || (product.image || product.emoji);
                 const isImage = imgSrc && (imgSrc.startsWith('/') || imgSrc.startsWith('data:') || imgSrc.startsWith('http'));
                 const productHTML = `
@@ -1005,7 +1005,7 @@
         // ==================== CART FUNCTIONS ====================
         function changeQuantity(productId, change) {
             const select = document.getElementById(`qty${productId}`);
-            const currentValue = parseFloat(select.value) || 0;
+            const currentValue = parseFloat(select.value|| 0;
             let newValue = currentValue + change;
             
             // Check if product is sold by pieces
@@ -1013,13 +1013,13 @@
             if (product && product.unit === 'piece') {
                 // For pieces, use integer values
                 const validValues = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 15, 20, 25, 50];
-                if (newValue < 0) newValue = 0;
-                if (newValue > 50) newValue = 50;
+                if (newValue < 0newValue = 0;
+                if (newValue > 50newValue = 50;
                 
                 // Find closest valid value
                 let closestValue = validValues[0];
                 let minDiff = Math.abs(newValue - closestValue);
-                for (let val of validValues) {
+                for (let val of validValues{
                     let diff = Math.abs(newValue - val);
                     if (diff < minDiff) {
                         minDiff = diff;
@@ -1032,13 +1032,13 @@
             } else {
                 // For weight items, use decimal values
                 const validValues = [0, 0.25, 0.3, 0.5, 0.75, 1, 1.25, 1.5, 2];
-                if (newValue < 0) newValue = 0;
+                if (newValue < 0newValue = 0;
                 if (newValue > 2) newValue = 2;
                 
                 // Find closest valid value
                 let closestValue = validValues[0];
                 let minDiff = Math.abs(newValue - closestValue);
-                for (let val of validValues) {
+                for (let val of validValues{
                     let diff = Math.abs(newValue - val);
                     if (diff < minDiff) {
                         minDiff = diff;
@@ -1051,22 +1051,22 @@
             }
         }
 
-        function setQuantity(productId, quantity) {
+        function setQuantity(productId, quantity{
             quantity = parseFloat(quantity) || 0;
-            if (quantity < 0) quantity = 0;
+            if (quantity < 0quantity = 0;
             updateCartItem(productId, quantity);
         }
 
-        function addToCart(productId) {
+        function addToCart(productId{
             const select = document.getElementById(`qty${productId}`);
             let quantity = parseFloat(select.value) || 1;
             
             // Check if product is sold by pieces
             // product already declared above
             if (product && product.unit === 'piece') {
-                if (quantity < 1) quantity = 1;
+                if (quantity < 1quantity = 1;
             } else {
-                if (quantity < 0.25) quantity = 0.25;
+                if (quantity < 0.25quantity = 0.25;
             }
             
             select.value = quantity;
@@ -1080,7 +1080,7 @@
             const settings = productSettings[productId];
 
             // Check if product is available
-            if (settings && settings.stock === false) {
+            if (settings && settings.stock === false{
                 showNotification('?? ?????? ??? ?????? ???? ??!', 'error');
                 return;
             }
@@ -1088,7 +1088,7 @@
             // Remove from cart if quantity is 0
             cart = cart.filter(item => item.id !== productId);
 
-            if (quantity > 0) {
+            if (quantity > 0{
                 // product already declared above
                 const price = settings ? settings.price : product.price;
                 const unit = settings ? settings.unit : product.unit;
@@ -1142,8 +1142,8 @@
         }
 
         // ==================== ORDER PLACEMENT ====================
-        function placeOrder() {
-            if (cart.length === 0) {
+        function placeOrder({
+            if (cart.length === 0{
                 showNotification('????? ???? ??? ?????? ????? ??? ?????!', 'error');
                 return;
             }
@@ -1152,7 +1152,7 @@
             const phone = document.getElementById('customerPhone').value.trim();
             const address = document.getElementById('customerAddress').value.trim();
 
-            if (!name || !phone || !address) {
+            if (!name || !phone || !address{
                 showNotification('????? ??? ????? ????!', 'error');
                 return;
             }
@@ -1175,14 +1175,14 @@
                     quantity: item.quantity,
                     total: item.price * item.quantity
                 })),
-                totalAmount: cart.reduce((sum, item) => sum + (item.price * item.quantity), 0),
+                totalAmount: cart.reduce((sum, item=> sum + (item.price * item.quantity), 0),
                 date: new Date().toLocaleString('hi-IN'),
                 status: '??? ?????',
                 deliveryStatus: '???????'
             };
 
             // Try to POST to backend first (if available), otherwise fallback to localStorage
-            (async () => {
+            (async (=> {
                 try {
                     const res = await fetch('/api/orders', {
                         method: 'POST',
@@ -1200,7 +1200,7 @@
                         orders.push(order);
                         localStorage.setItem('dairy_orders', JSON.stringify(orders));
                     }
-                } catch (err) {
+                } catch (err{
                     // network/backend not available: fallback to local
                     orders.push(order);
                     localStorage.setItem('dairy_orders', JSON.stringify(orders));
@@ -1223,7 +1223,7 @@
                 updateCartDisplay();
 
                 // Attempt to notify admin in this tab (if open)
-                if (document.getElementById('adminModal') && document.getElementById('adminModal').style.display === 'flex') {
+                if (document.getElementById('adminModal'&& document.getElementById('adminModal').style.display === 'flex') {
                     loadOrdersTable();
                 }
 
@@ -1235,7 +1235,7 @@
                     const saved = orders[orders.length-1];
                     const orderId = saved.orderId || saved.id || order.id;
                     const numbers = getAdminNumbers();
-                    if (numbers && numbers.length) {
+                    if (numbers && numbers.length{
                         const itemsText = order.items.map(i => `ï¿½ ${i.name} x${i.quantity} = ?${i.total}`).join('%0A');
                         const msg = encodeURIComponent(`??? ?????: ${orderId}%0A??????: ${name}%0A???: ${phone}%0A???: ?${order.totalAmount}%0A??????:%0A${itemsText}%0A???: ${address}`);
                         numbers.forEach(num => {
@@ -1243,7 +1243,7 @@
                             try { window.open(url, '_blank'); } catch (e) { console.warn('Could not open WA tab', e); }
                         });
                     }
-                } catch (e) {
+                } catch (e{
                     console.warn('auto WA notify failed', e);
                 }
             })();
@@ -1272,10 +1272,10 @@
             return token ? { 'Authorization': 'Bearer ' + token } : {};
         }
 
-        function openAdminLogin() {
+        function openAdminLogin({
             // If admin token present, open admin panel fullscreen; otherwise show login modal
             const token = localStorage.getItem('dairy_admin_jwt');
-            if (token) {
+            if (token{
                 const adminModal = document.getElementById('adminModal');
                 const content = adminModal.querySelector('.modal-content');
                 adminModal.style.display = 'flex';
@@ -1296,7 +1296,7 @@
             document.getElementById('adminPassword').focus();
         }
 
-        function closeLogin() {
+        function closeLogin({
             document.getElementById('loginModal').style.display = 'none';
             document.getElementById('adminPassword').value = '';
         }
@@ -1332,7 +1332,7 @@
                         const adminModal = document.getElementById('adminModal');
                         const content = adminModal.querySelector('.modal-content');
                         adminModal.style.display = 'flex';
-                        if (content) { content.style.width = '100%'; content.style.maxWidth = '100%'; content.style.height = '100vh'; content.style.borderRadius = '0'; content.style.left = '0'; content.style.top = '0'; }
+                        if (content{ content.style.width = '100%'; content.style.maxWidth = '100%'; content.style.height = '100vh'; content.style.borderRadius = '0'; content.style.left = '0'; content.style.top = '0'; }
                         enableAdminDragging();
                         showTab('orders');
                         showNotification('? Admin login successful (local)!', 'success');
@@ -1350,7 +1350,7 @@
                     const adminModal = document.getElementById('adminModal');
                     const content = adminModal.querySelector('.modal-content');
                     adminModal.style.display = 'flex';
-                    if (content) { content.style.width = '100%'; content.style.maxWidth = '100%'; content.style.height = '100vh'; content.style.borderRadius = '0'; content.style.left = '0'; content.style.top = '0'; }
+                    if (content{ content.style.width = '100%'; content.style.maxWidth = '100%'; content.style.height = '100vh'; content.style.borderRadius = '0'; content.style.left = '0'; content.style.top = '0'; }
                     enableAdminDragging();
                     showTab('orders');
                     showNotification('? Admin login successful (local)!', 'success');
@@ -1374,14 +1374,14 @@
         }
 
         // Normalize and return admin numbers as array; default to two known numbers
-        function getAdminNumbers() {
-            const raw = (localStorage.getItem('dairy_admin_contact') || '7007120750,9807235659').trim();
+        function getAdminNumbers({
+            const raw = (localStorage.getItem('dairy_admin_contact'|| '7007120750,9807235659').trim();
             const parts = raw.split(/[,;\s]+/).filter(Boolean);
             return parts.map(n => {
                 const digits = (n || '').replace(/\D/g, '');
-                if (!digits) return null;
+                if (!digitsreturn null;
                 // if 10 digits assume India and prefix 91
-                if (digits.length === 10) return '91' + digits;
+                if (digits.length === 10return '91' + digits;
                 return digits; // assume already has country code
             }).filter(Boolean);
         }
@@ -1390,17 +1390,17 @@
         let _adminDrag = { on: false, startX: 0, startY: 0, origX: 0, origY: 0, el: null };
         function enableAdminDragging(){
             const modal = document.getElementById('adminModal');
-            if(!modal) return;
+            if(!modalreturn;
             const content = modal.querySelector('.modal-content');
-            if(!content) return;
+            if(!contentreturn;
             content.classList.add('draggable');
             // center if not positioned yet
             if(!content.style.left) {
                 content.style.left = (window.innerWidth - content.offsetWidth)/2 + 'px';
-                content.style.top = Math.max(40, (window.innerHeight - content.offsetHeight)/6) + 'px';
+                content.style.top = Math.max(40, (window.innerHeight - content.offsetHeight)/6+ 'px';
             }
             const header = content.querySelector('.modal-header');
-            if(!header) return;
+            if(!headerreturn;
 
             header.style.touchAction = 'none';
 
@@ -1411,9 +1411,9 @@
         }
         function disableAdminDragging(){
             const modal = document.getElementById('adminModal');
-            if(!modal) return;
+            if(!modalreturn;
             const content = modal.querySelector('.modal-content');
-            if(!content) return;
+            if(!contentreturn;
             content.classList.remove('draggable');
             const header = content.querySelector('.modal-header');
             if(header){ header.removeEventListener('pointerdown', _onPointerDown); }
@@ -1434,11 +1434,11 @@
             try { e.target.setPointerCapture(e.pointerId); } catch(_){}
         }
         function _onPointerMove(e){
-            if(!_adminDrag.on) return;
+            if(!_adminDrag.onreturn;
             const el = _adminDrag.el;
             const dx = e.clientX - _adminDrag.startX;
             const dy = e.clientY - _adminDrag.startY;
-            el.style.left = (_adminDrag.origX + dx) + 'px';
+            el.style.left = (_adminDrag.origX + dx+ 'px';
             el.style.top = Math.max(8, _adminDrag.origY + dy) + 'px';
         }
         function _onPointerUp(e){
@@ -1447,7 +1447,7 @@
             try { e.target.releasePointerCapture && e.target.releasePointerCapture(e.pointerId); } catch(_){}
         }
 
-        function showTab(tabName, ev) {
+        function showTab(tabName, ev{
             // Hide all tabs
             document.getElementById('ordersTab').style.display = 'none';
             document.getElementById('productsTab').style.display = 'none';
@@ -1463,21 +1463,21 @@
             else {
                 // fallback: try to find a button with matching text
                 const btn = Array.from(document.querySelectorAll('.admin-tab')).find(b => b.textContent.toLowerCase().includes(tabName));
-                if (btn) btn.classList.add('active');
+                if (btnbtn.classList.add('active');
             }
 
             // Show selected tab
             document.getElementById(tabName + 'Tab').style.display = 'block';
 
             // Load data
-            if (tabName === 'orders') loadOrdersTable();
+            if (tabName === 'orders'loadOrdersTable();
             else if (tabName === 'products') loadProductsTable();
         }
 
         function loadOrdersTable() {
             const tbody = document.getElementById('ordersTableBody');
 
-            if (orders.length === 0) {
+            if (orders.length === 0{
                 tbody.innerHTML = '<tr><td colspan="6" style="text-align: center; padding: 40px; color: #888;">??? ????? ????</td></tr>';
                 return;
             }
@@ -1553,19 +1553,19 @@
 
         function updateOrderStatus(orderId, status) {
             const orderIndex = orders.findIndex(o => o.id === orderId);
-            if (orderIndex !== -1) {
+            if (orderIndex !== -1{
                 orders[orderIndex].status = status;
                 localStorage.setItem('dairy_orders', JSON.stringify(orders));
                 showNotification(`? ????? ${orderId} ?? ?????? ????? ?? ??!`, 'success');
             }
         }
 
-        async function deleteOrder(orderId) {
-            if (!confirm('???? ?? ???? ?? ????? ?? ????? ????? ????')) return;
+        async function deleteOrder(orderId{
+            if (!confirm('???? ?? ???? ?? ????? ?? ????? ????? ????')return;
             try {
                 // Try server delete
                 const res = await fetch('/api/orders/' + encodeURIComponent(orderId), { method: 'DELETE' });
-                if (res.ok) {
+                if (res.ok{
                     orders = orders.filter(o => (o.orderId || o.id || '') !== orderId);
                     localStorage.setItem('dairy_orders', JSON.stringify(orders));
                     loadOrdersTable();
@@ -1574,18 +1574,18 @@
                 }
             } catch (e) { console.warn('Server delete failed, removing locally', e); }
             // Fallback: remove locally
-            orders = orders.filter(o => (o.orderId || o.id || '') !== orderId);
+            orders = orders.filter(o => (o.orderId || o.id || ''!== orderId);
             localStorage.setItem('dairy_orders', JSON.stringify(orders));
             loadOrdersTable();
             showNotification('? ????? local ?? ??? ???? ???', 'success');
         }
 
-        function updateProduct(productId) {
+        function updateProduct(productId{
             const price = parseFloat(document.getElementById(`adminPrice${productId}`).value);
             const stock = document.getElementById(`adminStock${productId}`).value === 'true';
             const visible = document.getElementById(`adminVisible${productId}`).value === 'true';
 
-            if (!price || price < 1) {
+            if (!price || price < 1{
                 showNotification('? ????? ??? ???? ?????!', 'error');
                 return;
             }
@@ -1614,7 +1614,7 @@
                     const headers = Object.assign({ 'Content-Type':'application/json' }, getAuthHeaders());
                     const patch = { price: productSettings[productId].price, inStock: productSettings[productId].stock, imageUrl: productSettings[productId].imageUrl, unit: productSettings[productId].unit };
                     const res = await fetch('/api/products/'+encodeURIComponent(productId), { method: 'PUT', headers, body: JSON.stringify(patch) });
-                    if(!res.ok) console.warn('Backend update responded', res.status);
+                    if(!res.okconsole.warn('Backend update responded', res.status);
                 }catch(e){ console.warn('Backend update failed', e); }
             })();
         }
@@ -1631,11 +1631,11 @@
         async function createProductFromAdminModal(){
             const id = document.getElementById('new_p_id').value.trim();
             const name = document.getElementById('new_p_name').value.trim();
-            const category = document.getElementById('new_p_category').value.trim() || 'dairy';
-            const price = parseFloat(document.getElementById('new_p_price').value) || 0;
+            const category = document.getElementById('new_p_category').value.trim(|| 'dairy';
+            const price = parseFloat(document.getElementById('new_p_price').value|| 0;
             const unit = document.getElementById('new_p_unit').value.trim() || '1 kg';
-            const imageUrl = document.getElementById('new_p_image').value.trim() || '';
-            const desc = document.getElementById('new_p_desc').value.trim() || '';
+            const imageUrl = document.getElementById('new_p_image').value.trim(|| '';
+            const desc = document.getElementById('new_p_desc').value.trim(|| '';
 
             if(!id || !name || price <= 0){ showNotification('????? valid id, ??? ?? ???? ???', 'error'); return; }
 
@@ -1653,7 +1653,7 @@
             // Try to POST to backend /api/products (requires admin JWT). If fails, ignore but keep local item.
             try{
                 const headers = Object.assign({ 'Content-Type':'application/json' }, getAuthHeaders());
-                const res = await fetch('/api/products',{ method: 'POST', headers, body: JSON.stringify({ name, category, price, mrp: price, unit, imageUrl, description: desc, inStock: true }) });
+                const res = await fetch('/api/products',{ method: 'POST', headers, body: JSON.stringify({ name, category, price, mrp: price, unit, imageUrl, description: desc, inStock: true }});
                 if (res.ok) console.log('Posted new product to backend');
                 else console.warn('Backend create responded', res.status);
             }catch(e){ console.warn('Backend create failed (ok to ignore in dev)'); }
@@ -1661,7 +1661,7 @@
 
         // Admin: delete product (local + attempt backend delete)
         async function deleteProduct(productId){
-            if(!confirm('???? ?? ???? ?? ?????? ?? ????? ????? ????')) return;
+            if(!confirm('???? ?? ???? ?? ?????? ?? ????? ????? ????')return;
             // Remove from dairyProducts
             const idx = dairyProducts.findIndex(p=>p.id===productId);
             if(idx!==-1) dairyProducts.splice(idx,1);
@@ -1670,11 +1670,11 @@
             localStorage.setItem('dairy_product_settings', JSON.stringify(productSettings));
             showNotification('? ?????? local ?? ??? ???? ???', 'success');
             loadProductsTable(); loadProducts();
-            // Attempt backend delete (may require auth) - ignore failures
+            // Attempt backend delete (may require auth- ignore failures
             try{
                 const headers = getAuthHeaders();
                 const res = await fetch('/api/products/'+encodeURIComponent(productId),{ method: 'DELETE', headers });
-                if (res.ok) console.log('Backend delete ok'); else console.warn('Backend delete responded', res.status);
+                if (res.okconsole.log('Backend delete ok'); else console.warn('Backend delete responded', res.status);
             }catch(e){ console.warn('Backend delete failed (may require auth)'); }
         }
 
@@ -1701,7 +1701,7 @@
                         showNotification('? Image uploaded and set for product', 'success');
                         loadProducts(); loadProductsTable();
                         // try persist to backend product record
-                        try{ await fetch('/api/products/'+encodeURIComponent(productId), { method: 'PUT', headers: Object.assign({ 'Content-Type':'application/json' }, getAuthHeaders()), body: JSON.stringify({ imageUrl }) }); }catch(e){}
+                        try{ await fetch('/api/products/'+encodeURIComponent(productId), { method: 'PUT', headers: Object.assign({ 'Content-Type':'application/json' }, getAuthHeaders()), body: JSON.stringify({ imageUrl }}); }catch(e){}
                         return;
                     }
                 }catch(e){ console.warn('Upload failed, falling back to local dataURL'); }
@@ -1709,7 +1709,7 @@
                 const reader = new FileReader();
                 reader.onload = function(ev){
                     const dataUrl = ev.target.result;
-                    if(!productSettings[productId]) productSettings[productId] = { price:0, unit:'1 kg', stock:true, visible:true };
+                    if(!productSettings[productId]productSettings[productId] = { price:0, unit:'1 kg', stock:true, visible:true };
                     productSettings[productId].imageUrl = dataUrl;
                     localStorage.setItem('dairy_product_settings', JSON.stringify(productSettings));
                     showNotification('? Image set locally for product', 'success');
@@ -1725,17 +1725,17 @@
             const newPass = document.getElementById('newPassword').value;
             const confirm = document.getElementById('confirmPassword').value;
 
-            if (current !== adminPassword) {
+            if (current !== adminPassword{
                 showNotification('? ??????? ??????? ??? ??!', 'error');
                 return;
             }
 
-            if (newPass.length < 6) {
+            if (newPass.length < 6{
                 showNotification('? ??? ??????? ?? ?? ?? 6 characters ?? ???? ?????!', 'error');
                 return;
             }
 
-            if (newPass !== confirm) {
+            if (newPass !== confirm{
                 showNotification('? ??? ??????? ??? ???? ????!', 'error');
                 return;
             }
@@ -1767,8 +1767,8 @@
         let __currentOrderIdForModal = null;
         function openOrderDetails(orderId){
             __currentOrderIdForModal = orderId;
-            const order = orders.find(o => (o.orderId||o.id||'') === orderId);
-            if(!order) return showNotification('Order not found','error');
+            const order = orders.find(o => (o.orderId||o.id||''=== orderId);
+            if(!orderreturn showNotification('Order not found','error');
             document.getElementById('orderDetailsTitle').textContent = `Order ${orderId} ï¿½ ${order.customerName || ''}`;
             const body = document.getElementById('orderDetailsBody');
             let html = `<p><strong>Phone:</strong> ${order.customerPhone || ''}</p><p><strong>Address:</strong> ${order.customerAddress || ''}</p><hr>`;
@@ -1784,8 +1784,8 @@
         function closeOrderDetails(){ document.getElementById('orderDetailsModal').style.display = 'none'; __currentOrderIdForModal = null; }
 
         function sendWhatsAppForCurrentOrder(){
-            if(!__currentOrderIdForModal) return showNotification('No order selected','error');
-            const ord = orders.find(o => (o.orderId||o.id||'') === __currentOrderIdForModal);
+            if(!__currentOrderIdForModalreturn showNotification('No order selected','error');
+            const ord = orders.find(o => (o.orderId||o.id||''=== __currentOrderIdForModal);
             if(!ord) return showNotification('Order not found','error');
             const numbers = getAdminNumbers();
             if(!numbers || numbers.length === 0) return showNotification('Admin contact not set in Settings','error');
@@ -1805,14 +1805,14 @@
 
             document.body.appendChild(notification);
 
-            setTimeout(() => {
+            setTimeout((=> {
                 notification.remove();
             }, 3000);
         }
 
         // Listen for orders added in other tabs/windows and notify admin
-        window.addEventListener('storage', (e) => {
-            if (e.key === 'dairy_orders') {
+        window.addEventListener('storage', (e=> {
+            if (e.key === 'dairy_orders'{
                 try {
                     const newOrders = JSON.parse(e.newValue || '[]');
                     const oldOrders = JSON.parse(e.oldValue || '[]');
@@ -1821,7 +1821,7 @@
                         const who = latest.customerName || latest.name || 'Customer';
                         showNotification(`??? ?????: ${who}`, 'success');
                         // If admin modal is open, refresh the table
-                        if (document.getElementById('adminModal') && document.getElementById('adminModal').style.display === 'flex') {
+                        if (document.getElementById('adminModal') && document.getElementById('adminModal').style.display === 'flex'{
                             orders = newOrders;
                             loadOrdersTable();
                         } else {
@@ -1835,7 +1835,7 @@
         });
 
         // Fetch live products from API and then initialize
-        async function fetchAndInit() {
+        async function fetchAndInit({
             try {
                 const res = await fetch('/api/products');
                 if (res.ok) {
