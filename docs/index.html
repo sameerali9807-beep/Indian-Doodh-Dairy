@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="hi">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Indian Doodh Dairy</title>
+  </head>
+  <body>
+    <script>
+      var v = 'v=' + Date.now();
+      var href = 'frontend/index_clean.html' + (location.search ? location.search + '&' + v : '?' + v);
+      location.replace(href + location.hash);
+    </script>
+    <a id="go" href="frontend/index_clean.html">Open Website</a>
+    <script>document.getElementById('go').href = href + location.hash;</script>
+  </body>
+</html>
