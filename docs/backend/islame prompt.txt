@@ -1,0 +1,51 @@
+Build a full-stack Islamic web application with the following features:
+
+1. **Qur’an Module**
+   - Complete Qur’an text with Surah and Ayah indexing.
+   - Multiple translations in all major languages (English, Urdu, Hindi, Arabic, etc.).
+   - Tafseer options (Tafheem-ul-Qur’an by Maulana Maududi, Dr. Israr Ahmad lectures).
+   - Search functionality by Surah, Ayah, or keyword.
+
+2. **Hadith Module**
+   - Integration of all Sahih Ahadith collections (Sahih Bukhari, Sahih Muslim, Sunan Abu Dawood, etc.).
+   - Categorization by topic (Prayer, Fasting, Charity, etc.).
+   - Search and filter options.
+
+3. **Dua & Supplications**
+   - Daily Duas with references.
+   - Categories (Morning, Evening, Travel, Illness, etc.).
+   - Audio recitation option.
+
+4. **Islamic Calendar & Namaz Timings**
+   - Hijri calendar with important Islamic dates (Ramadan, Eid, Hajj).
+   - Daily prayer times based on user’s location (Fajr, Dhuhr, Asr, Maghrib, Isha).
+   - Roza (fasting) schedule for the full year.
+
+5. **Lectures & Bayan**
+   - Audio/Video integration of Dr. Israr Ahmad’s lectures.
+   - Tafheem-ul-Qur’an by Maulana Maududi.
+   - Categorized by topic and series.
+
+6. **Language Support**
+   - Multi-language translation option for all modules.
+   - User can switch between languages easily.
+
+7. **Admin Panel**
+   - Secure login for admins.
+   - Add/Remove/Update Qur’an translations, Hadith entries, Duas, Lectures.
+   - Manage calendar events and prayer time settings.
+   - User management (roles, permissions).
+
+8. **Tech Stack**
+   - **Frontend:** React.js / Next.js with TailwindCSS for responsive UI.
+   - **Backend:** Node.js with Express.js.
+   - **Database:** MongoDB or PostgreSQL for storing Qur’an, Hadith, and user data.
+   - **Authentication:** JWT-based secure login.
+   - **Deployment:** Docker + Cloud (AWS/Heroku/Vercel).
+   - **API Integration:** Prayer time API, Hijri calendar API, Translation API.
+
+9. **Extra Features**
+   - Bookmark Ayahs, Hadith, or Duas.
+   - Dark/Light mode.
+   - Mobile-friendly responsive design.
+   - Option to download PDFs of Qur’an or Hadith.
