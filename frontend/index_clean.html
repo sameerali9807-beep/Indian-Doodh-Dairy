@@ -2407,7 +2407,13 @@
         }
 
         fetchAndInit();
+
+        // [BUILD] Fingerprint for GitHub Pages cache verification
+        window.__BUILD_ID__ = '2026-08-06-dairy-products-synced-' + 1786041205000;
+        console.log('[BUILD] Build ID:', window.__BUILD_ID__);
+        console.log('[BUILD] Product count:', typeof dairyProducts !== 'undefined' ? dairyProducts.length : 'N/A');
     </script>
+    <!-- build:2026-08-06-dairy-products-synced, products:14, quantity+priceTotal dual inputs enabled -->
 </body>
 
 </html>
