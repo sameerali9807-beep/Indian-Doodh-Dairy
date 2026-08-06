@@ -829,27 +829,20 @@
     <script>
         // ==================== COMPLETE DAIRY PRODUCTS ====================
         const dairyProducts = [
-            { id: 1, name: "दही (Dahi)", price: 60, unit: "किलो", emoji: "🥛", category: "dairy" },
-            { id: 2, name: "पनीर (Paneer)", price: 300, unit: "किलो", emoji: "🧀", category: "dairy" },
-            { id: 3, name: "देसी घी (Desi Ghee)", price: 600, unit: "500 ग्राम", emoji: "🫕", category: "dairy" },
-            { id: 4, name: "मलाई (Malai)", price: 120, unit: "किलो", emoji: "🍦", category: "dairy" },
-            { id: 5, name: "खोया (Khoya/Mawa)", price: 450, unit: "किलो", emoji: "⚪", category: "dairy" },
-            { id: 6, name: "चेना (Chena)", price: 200, unit: "किलो", emoji: "🧈", category: "dairy" },
-            { id: 7, name: "श्रीखंड (Shrikhand)", price: 280, unit: "किलो", emoji: "🍯", category: "sweet" },
-            { id: 8, name: "रबड़ी (Rabdi)", price: 400, unit: "किलो", emoji: "🍮", category: "sweet" },
-            { id: 9, name: "गुलाब जामुन", price: 15, unit: "पीस", emoji: "🍡", category: "sweet" },
-            { id: 10, name: "रसगुल्ला (Rasgulla)", price: 10, unit: "पीस", emoji: "🍬", category: "sweet" },
-            { id: 11, name: "रसमलाई (Rasmalai)", price: 15, unit: "पीस", emoji: "🥧", category: "sweet" },
-            { id: 12, name: "राजभोग (Rajbhog)", price: 20, unit: "पीस", emoji: "🎂", category: "sweet" },
-            { id: 13, name: "दूध बर्फी (Doodh Barfi)", price: 400, unit: "किलो", emoji: "🥮", category: "sweet" },
-            { id: 14, name: "खोया बर्फी (Khoya Barfi)", price: 450, unit: "किलो", emoji: "🍫", category: "sweet" },
-            { id: 15, name: "काजू कतली (Kaju Katli)", price: 700, unit: "किलो", emoji: "🌰", category: "sweet" },
-            { id: 16, name: "बेसन लड्डू (Besan Ladoo)", price: 350, unit: "किलो", emoji: "🎯", category: "sweet" },
-            { id: 17, name: "बूंदी लड्डू (Boondi Ladoo)", price: 320, unit: "किलो", emoji: "🔴", category: "sweet" },
-            { id: 18, name: "पेड़ा (Peda)", price: 12, unit: "पीस", emoji: "🍪", category: "sweet" },
-            { id: 19, name: "मिल्क केक (Milk Cake)", price: 550, unit: "किलो", emoji: "🍰", category: "sweet" },
-            { id: 20, name: "दूध (Milk)", price: 60, unit: "लीटर", emoji: "🥛", category: "dairy" },
-            { id: 22, name: "फुल क्रीम दूध (Full Cream)", price: 70, unit: "लीटर", emoji: "🥛", category: "dairy" }
+            { id: "p-002", name: "पनीर (Paneer)", price: 360, unit: "1 kg", emoji: "🧀", category: "dairy", imageUrl: "/images/Paneer.jpg", description: "Fresh homemade paneer, soft and rich." },
+            { id: "p-003", name: "देसी घी (Desi Ghee)", price: 400, unit: "500 g", emoji: "🫕", category: "dairy", imageUrl: "/images/Desi Ghi.jpg", description: "A2 desi ghee, cold-pressed and aromatic." },
+            { id: "p-005", name: "गुलाब जामुन (Gulab Jamun)", price: 18, unit: "1 piece", emoji: "🍡", category: "sweets", imageUrl: "/images/Gulaabjamun.jpg", description: "Soft, syrupy gulab jamuns made fresh." },
+            { id: "p-006", name: "चेना (Chena)", price: 20, unit: "1 piece", emoji: "🧈", category: "sweets", imageUrl: "/images/Chena Rassgulla.jpg", description: "Fresh chena pieces." },
+            { id: "p-007", name: "खोया (Khoya/Mawa)", price: 450, unit: "1 kg", emoji: "⚪", category: "sweets", imageUrl: "/images/Khoya.jpg", description: "Rich khoya for sweets and desserts." },
+            { id: "p-008", name: "लस्सी (Sweet Lassi)", price: 50, unit: "300 ml", emoji: "🥤", category: "milk", imageUrl: "/images/Lassi.jfif", description: "Refreshing sweet lassi made with fresh curd." },
+            { id: "p-009", name: "रबड़ी (Rabadi)", price: 600, unit: "1 kg", emoji: "🍮", category: "sweets", imageUrl: "/images/Rabadi.jpg", description: "Creamy rabadi for desserts and celebrations." },
+            { id: "p-010", name: "दही (Dahi)", price: 60, unit: "500 g", emoji: "🥛", category: "dairy", imageUrl: "/images/Dahi.jpg", description: "Fresh homemade dahi (curd)." },
+            { id: "p-011", name: "दूध बर्फी (Doodh Barfi)", price: 600, unit: "1 kg", emoji: "🥮", category: "sweet", imageUrl: "/images/Doodh Barfi.jpg", description: "Rich doodh barfi made from pure milk solids." },
+            { id: "p-012", name: "बेसन लड्डू (Besan Laddu)", price: 260, unit: "1 kg", emoji: "🎯", category: "sweet", imageUrl: "/images/Basan Laddu.jpg", description: "Traditional besan laddus, soft and aromatic." },
+            { id: "p-013", name: "बूंदी लड्डू (Boondi Laddu)", price: 260, unit: "1 kg", emoji: "🔴", category: "sweet", imageUrl: "/images/Boondi laddu.jpg", description: "Classic boondi laddus made fresh daily." },
+            { id: "p-014", name: "काजू कतली (Kaju Katli)", price: 1200, unit: "1 kg", emoji: "🌰", category: "sweet", imageUrl: "/images/Kaju Katli.jpg", description: "Premium kaju katli made with pure cashews and sugar." },
+            { id: "p-015", name: "मिल्केक (Milk Cake)", price: 600, unit: "1 kg", emoji: "🍰", category: "sweet", imageUrl: "/images/Milkek.jpg", description: "Traditional milk cake, dense and sweet." },
+            { id: "p-016", name: "दूध (Milk)", price: 80, unit: "1 liter", emoji: "🥛", category: "milk", imageUrl: "/images/Milk.jpg", description: "Fresh cow milk, delivered daily." }
         ];
 
         // Cart and Admin Data
